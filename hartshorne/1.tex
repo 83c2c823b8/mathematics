@@ -111,10 +111,31 @@ Let $Y = 1/X_{n}$, then there exists $C_1,\ldots, C_r, D\in k[X_1,\ldots, X_n,Y]
 \begin{proof}
 	(a),(b),(c) are obvious.\\
 	(d)	Let $F\in\sqrt{\mathfrak a}$, then $\forall P\in Z(\mathfrak a),\exists n\in\N\st F^n(P)=0\ie F(P)=0$, which means $F\in I(Z(\mathfrak a))$. Inverse proof is Hilbert Nullstellnsatz.\\
-	(e)
+	(e) $Y \subset Z(I(Y))$ is obvious, and $Z(I(Y))$ is closed set, so $\overline Y \subset Z(I(Y))$\\
+	Conversely, let $W$ be any closed set containing $Y$, then $W = Z(\mathfrak a)$, some ideal $\mathfrak a$. $Z(\mathfrak a) \supset Y \ie I(Z(\mathfrak a)) \subset I(Y)$. Obviously $\mathfrak a\subset I(Z(\mathfrak a))$, hence $\mathfrak a \subset I(Y)$ ,which means $W=Z(\mathfrak a) \supset Z(I(Y))$. Thus $Z(I(Y))=\overline Y$
 \end{proof}
+
+\mycor{
+	\[\text{Algebraic sets in }\A^n \overset{1:1}{\longleftrightarrow} \text{Radical ideals in }A\]
+	\[\mathfrak a\colon \text{radical ideal}\defi \mathfrak a = \sqrt{\mathfrak a}\]
+	\[\text{Algebraic set $Y$ is irreducible}\Longleftrightarrow \text{$I(Y)$ is prime ideal.} \]
+}
+\begin{proof}
+	If $Y$ is irreducible, we show that $I(Y)$ is prime.\\
+	If $fg\in I(Y)$, then $Y\subset Z(fg) = Z(f)\cup Z(g)$. $Y = (Y\cap Z(f)) \cup (Y\cap Z(g))$, both being closed subsets of $Y$. Since $Y$ is irreducible, $Y = Y\cap Z(f)$ namely $Y\subset Z(f)$ or $Y\subset Z(g)$, hence $f\in I(Y)$ or $g\in I(Y)$\\
+	Conversely, let $\mathfrak p$ be a prime ideal and suppose that $Z(\mathfrak p) = Y_1 \cup Y_2$, then $\mathfrak p = I(Y_1) \cap I(Y_2)$
+\end{proof}
+
+\mydef{
+	Let $Y\subset \A^n$ be affine algebraic set. We define the affine coordinate $A(Y) \coloneq A/I(Y)$ 
+}
+
 \mydef{
 	$X\colon$:topological space is Noetherian $\defi$ for any sequence $Y_1\supset Y_2\supset \cdots$ of closed subsets, $\exists r\in \N \st Y_r=Y_{r+1}=\cdots$
+}
+
+\mydef{
+	
 }
 
 \end{document}
