@@ -134,8 +134,49 @@ Let $Y = 1/X_{n}$, then there exists $C_1,\ldots, C_r, D\in k[X_1,\ldots, X_n,Y]
 	$X\colon$:topological space is Noetherian $\defi$ for any sequence $Y_1\supset Y_2\supset \cdots$ of closed subsets, $\exists r\in \N \st Y_r=Y_{r+1}=\cdots$
 }
 
+\myprop{
+	$X\colon$ Noetherian topological space, for every nonempty closed subsets can be expressed as following
+	\[Y = Y_1\cup Y_2\cdots \cup Y_r\]
+	$Y_i\colon$ irreducible. If we require $Y_i\not\supset Y_j$, $Y_i$ are uniquely determined.
+}
+\begin{proof}
+	First we show the existence of representation of $Y$. Let $\mathfrak S$ be the set of nonempty closed subsets of $X$ which cannot be written as a finite union of irreducible closed subset. If $\mathfrak S$ is nonempty, since $X$ is noetherian, there exists minimal element, say $Y$. Then $Y$ is not irreducible. Thus we can write $Y = Y' \cup Y''$, where $Y'$ and $Y''$ are proper closed subsets of $Y$. By minimality of $Y$, each of $Y'$ and $Y''$ can be expressed as finite union of closed irreducible subsets, which is contradiction.\\
+	Now suppose $Y=Y_1'\cup \cdots Y_s'$ is another such representation. Then $Y_1'\subset Y_1\cup\cdots Y_r$.so
+	\[Y_1' = \bigcup (Y_1'\cap Y_i)\]
+	But $Y_1'$ is irreducible, so $Y_1'\subset Y_i$ for some $i$, similarly $Y_1\subset Y_j'$ for some $j$. By condition, we find $Y_1'=Y_1$. Proceeding this processes, we obtain the desired result.
+\end{proof}
+
+\mycor{
+	Every algebraic set in $\A^n$ can be expressed uniquely as a union of varities, no one containing another.
+}
 \mydef{
-	
+	$X\colon$ topological space.
+	We define the dimension of $X$ (denoted $\dim X$) to be the supremum of all integers $n$ such that there exists a chain $Z_0\subsetneq Z_1\subsetneq \cdots \subsetneq Z_n $
 }
 
+\mydef{
+	In a ring $A$, the height of a pirme ideals $\mathfrak p$ is the supremum of all integers $n$ such that there exists a chain $\mathfrak p_0 \subsetneq \mathfrak p_1\subsetneq \cdots \subsetneq \mathfrak p_n = \mathfrak p $\\
+	We define the dimension of $A$ (Krull dimension) of $A$ to be the supremum of the heights of all prime ideals.
+}
+
+\myprop{
+	If $Y$ is an affine algebraic set, then the dimension of $Y$ is equal to the dimension of its affine coordinate ring $A(Y)$
+}
+\begin{proof}
+	If $Y$ is an affine algebraic set in $\A^n$, then the closed irreducible subsets of $Y$ corresopond to prime ideals of $A=k[X_1,\ldots, X_n]$ containing $I(Y)$, which corresoponds to prime ideals of $A(Y)$.
+\end{proof}
+
+\mythm{
+	Let $k$ be a field, and let $B$ be an integral domain which is a finitely generated $k$-algebra Then:
+	\begin{enumerate}
+		\item[(a)]
+			The dimension of $B$ is equal to the transcendence degree of the quotient field $K(B)$ of $B$ over $k$
+		\item[(b)]
+			For any prime ideal $\mathfrak p$ in $B$, we have
+			\[\height\mathfrak p + \dim B/\mathfrak p = \dim B\]
+	\end{enumerate}
+}
+\begin{proof}
+	
+\end{proof}
 \end{document}
