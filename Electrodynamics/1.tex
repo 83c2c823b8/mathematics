@@ -1,0 +1,83 @@
+\RequirePackage{luatex85}
+\documentclass[leqno]{ltjsarticle}
+\usepackage{luatexja-fontspec}
+\usepackage[top=10truemm,bottom=10truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage{luatexja} 
+\usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,mypkg,tikz-cd,tensor}
+\usetikzlibrary{arrows.meta}
+\titleformat*{\section}{\Large\bfseries}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+%\everymath{\displaystyle}
+\begin{document}
+	\begin{equation}
+		\tensor{\eta}{_\mu_\nu} \coloneq
+		\begin{pmatrix}
+			1 & 0 & 0 & 0\\
+			0 & -1 & 0 & 0\\
+			0 & 0 & -1 & 0\\
+			0 & 0 & 0 & -1
+		\end{pmatrix}
+	\end{equation}
+
+\begin{equation}
+\tensor{F}{_\mu_\nu}\coloneq
+	\begin{pmatrix}
+		0 & E_1 & E_2 & E_3\\
+		-E_1 & 0 & -B_3 & B_2\\
+		-E_2 & B_3 & 0 & -B_1\\
+		-E_3 & -B_2 & B_1 & 0
+	\end{pmatrix}\ \  
+\tensor{F}{^\mu^\nu}=
+	\begin{pmatrix}
+		0 & -E_1 & -E_2 & -E_3\\
+		E_1 & 0 & -B_3 & B_2\\
+		E_2 & B_3 & 0 & -B_1\\
+		E_3 & -B_2 & B_1 & 0
+	\end{pmatrix}
+\end{equation}
+	This tensor is called Faraday tensor and staisfies the following equation.
+	\begin{equation}
+		\partial^\gamma\tensor{F}{^\beta^\nu} + \partial^\beta\tensor{F}{^\nu^\gamma} + \partial^\nu\tensor{F}{^\gamma^\beta} = 0 
+	\end{equation}
+	\begin{shadebox}
+	This means 
+	\begin{equation}
+		\left\{\,
+			\begin{aligned}
+				&\nabla\times E= -\pdv{B}{t} \\
+				&\nabla\cdot B = 0
+			\end{aligned}
+		\right.
+	\end{equation}
+\end{shadebox}
+	
+	\begin{equation}
+		\mathcal{J}^{\nu} \coloneq \frac{1}{\mu_0}\partial_{\mu}\tensor{F}{^\mu^\nu}
+	\end{equation}
+
+	\begin{shadebox}
+		If you denote $\mathcal J = {}^t(\rho,J) = {}^t(\rho,j_x,j_y,j_z)$
+		\begin{equation}
+			\left\{\,
+				\begin{aligned}
+					&\nabla\cdot E = \mu_0\rho\\
+					&\nabla\times B = \mu_0J + \pdv{E}{t}
+				\end{aligned}
+			\right.
+		\end{equation}
+	\end{shadebox}
+	\begin{equation}
+		\tensor{\mathcal T}{^\mu^\nu} \coloneq \frac{1}{\mu_0}\qty(\tensor{F}{^\mu^\alpha}\tensor{\eta}{_\alpha_\beta}\tensor{F}{^\beta^\nu} + \frac{1}{4}\tensor{\eta}{^\mu^\nu}\tensor{F}{^\beta^\gamma}\tensor{F}{_\beta_\gamma}) 
+	\end{equation}
+		This tensor is called energy-momentum tensor.
+	\begin{itembox}[l]{Thm}
+		\begin{equation}
+			\partial_\mu \tensor{\mathcal T}{^\mu^\nu} = \mathcal J_{\mu}\tensor{F}{^\mu^\nu}
+		\end{equation}
+	\end{itembox}
+	\begin{align*}
+		\partial_\mu \tensor{\mathcal T}{^\mu^\nu}&= \frac{1}{\mu_0}\qty(\partial_{\mu}\tensor{F}{^\mu^\alpha}\tensor{\eta}{_\alpha_\beta}\tensor{F}{^\beta^\nu} + \frac{1}{4}\partial_{\mu}\tensor{\eta}{^\mu^\nu}\tensor{F}{^\beta^\gamma}\tensor{F}{_\beta_\gamma})
+	\end{align*}
+\end{document}
+
