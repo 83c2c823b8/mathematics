@@ -1,0 +1,125 @@
+\RequirePackage{luatex85}
+\documentclass[leqno]{ltjsarticle}
+\usepackage{luatexja-fontspec}
+\usepackage[top=10truemm,bottom=10truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage{luatexja} 
+\usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,mypkg,tikz-cd,homology}
+\usetikzlibrary{arrows.meta}
+\titleformat*{\section}{\Large\bfseries}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+%\everymath{\displaystyle}
+\begin{document}
+\section{semi-orthogonal decomposition}
+\begin{itembox}[l]{Def}
+	\begin{itemize}
+		\item[(i)]
+				We define right(left) orthogonal sub-category as following
+		\begin{gather*}
+			\mathcal C^{\perp}\coloneq \{F\in\mathcal D\mid \forall E\in\mathcal C, \Hom_{\mathcal D}(E,F)=0\}\\
+			 {}^{\perp}\mathcal C\coloneq \{E\in\mathcal D\mid \forall F\in\mathcal C, \Hom_{\mathcal D}(E,F)=0\}
+		\end{gather*}
+	\item[(ii)]
+		$\mathcal C$ is strictly full subcategory of $\mathcal D$ iff $\forall E\in\mathcal C$ and $F\in\mathcal D\st E\simeq F\Longrightarrow F\in\mathcal C$ 
+	\item[(iii)]
+		Thick closure of $\mathcal C$ in $\mathcal D$ is the minimum strictly full subcategory of $\mathcal D$ which contains $\mathcal C$ and is closed under taking summands.
+	\item[(iv)]
+		
+	\end{itemize}
+
+\end{itembox}
+\begin{itembox}[l]{Semi-orthogonal decomposition}
+		$i<j\Longrightarrow \mathcal C_i \subset \mathcal C_j^\perp$, $C_i \in \mathcal C_i$
+	\[
+		\begin{tikzcd}
+			0\ar[rr]& & F_{m}\ar[r]\ar[ld] &\cdots\ar[r] &F_{3}\ar[rr]&&F_{2}\ar[ld]\ar[rr]&&F\ar[ld]\\
+								 &C_{m}\ar[lu,dotted,"{[1]}"] &&&&C_2\ar[lu,dotted,"{[1]}"]&&C_1\ar[lu,dotted,"{[1]}"]
+		\end{tikzcd}
+	\]
+	We denote 
+	\[\mathcal D = \langle \mathcal C_1,\ldots ,\mathcal C_m\rangle\]
+\end{itembox}
+
+\mythm{
+	$C_i\ (1\le i \le m)$ are unique up to isomorphism and 
+	\begin{gather*}
+	p_i\colon \mathcal D\to \mathcal C_i\ F\mapsto C_i\\
+	p_{i,m}\colon \mathcal D\to \langle \mathcal C_i,\ldots ,\mathcal C_m\rangle\ F\mapsto F_i
+\end{gather*}
+	is functorial.
+}
+\begin{proof}
+	Since $\mathcal C_m$ is a strict full subcategory, $F_m\in\mathcal C_m$.
+	$\forall E\in\mathcal C_j\ (1\le j<m),\ \Hom_{\mathcal D}(F_m,E)=0$ \\
+	\[
+	\begin{tikzcd}
+		F_{m}\ar[r]&F_{m-1}\ar[r]&C_{m-1}\ar[r]&F_m[1]\hspace{5mm} \text{(exact.tri.)}
+	\end{tikzcd}
+\]
+Take $E\in\mathcal C_j\ (j<m-1)$ and acting cohomological functor $\Hom_{\mathcal D}(-,E)$ this exact triangle,
+	\[
+	\begin{tikzcd}
+		\Hom_{\mathcal D}(C_{m-1},E)\ar[r]&\Hom_{\mathcal D}(F_{m-1},E)\ar[r]&\Hom_{\mathcal D}(C_{m},E)\hspace{5mm}\text{(exact)}
+	\end{tikzcd}
+\]
+		By definition, since both the left and right sides are 0, $\Hom_{\mathcal D}(F_{m-1},E)=0$\\
+		Repeating this procedure, we obtain $\forall E\in \mathcal C_i\  (1\le i<j)\Hom_{\mathcal D}(F_j,E) = 0$
+
+	\[
+		\begin{tikzcd}
+			0\ar[rr]& & F_{m}\ar[r]\ar[ld] &\cdots\ar[r] &F_{3}\ar[rr]&&F_{2}\ar[ld]\ar[rr]&&F\ar[ld]\ar[dd,"f"]\\
+								 &C_{m}\ar[lu,dotted,"{[1]}"] &&&&C_2\ar[lu,dotted,"{[1]}"]&&C_1\ar[lu,dotted,"{[1]}"]\\
+			0\ar[rr]& & F'_{m}\ar[r]\ar[ld] &\cdots\ar[r] &F'_{3}\ar[rr]&&F'_{2}\ar[ld]\ar[rr]&&F'\ar[ld]\\
+								 &C'_{m}\ar[lu,dotted,"{[1]}"] &&&&C'_2\ar[lu,dotted,"{[1]}"]&&C'_1\ar[lu,dotted,"{[1]}"]
+		\end{tikzcd}
+	\]
+
+	\[
+	\begin{tikzcd}
+		&F_{2}\ar[ld,"0"]\ar[rrd,swap,"0"]\ar[r]&F\ar[r]\ar[d,"f"]&C_{1}\ar[r]&F_2[1]\hspace{5mm} \text{(exact.tri.)}\\
+		C'_1[-1]\ar[r]&F'_{2}\ar[r]&F'\ar[r]&C'_{1}\ar[r]&F'_2[1]\hspace{5mm} \text{(exact.tri.)}
+	\end{tikzcd}
+\]
+From previous lemma, there uniquely exists morphisms which commute the diagram.
+	\[
+	\begin{tikzcd}
+		&F_{2}\ar[d,dotted,swap,"\exists !p_{2,m}(f)"]\ar[r]&F\ar[r]\ar[d,"f"]&C_{1}\ar[d,dotted,"\exists !p_1(f)"]\ar[r]&F_2[1]\hspace{5mm} \text{(exact.tri.)}\\
+	"	C'_1[-1]\ar[r]&F'_{2}\ar[r]&F'\ar[r]&C'_{1}\ar[r]&F'_2[1]\hspace{5mm} \text{(exact.tri.)}
+	\arrow[draw=none, from=1-2, to=2-3,shift right=3,"\circlearrowleft"]
+	\arrow[draw=none, from=1-3, to=2-4,shift right=3,"\circlearrowleft"]
+	\end{tikzcd}
+\]
+This indicates $p_1(g)\circ p_1(f) = p_1(g\circ f)$ and $p_{2,m}(g)\circ p_{2,m}(f) = p_{2,m}(g\circ f)$.
+\end{proof}
+
+\mythm{
+	If there exists SOD of $\mathcal D = \langle \mathcal C_1,\ldots ,C_{m}\rangle$
+	\[K(\mathcal D)\to K(\mathcal C_1)\oplus\cdots\oplus K(\mathcal C_m)\hspace{5mm}[F]\mapsto (p_1(F),\ldots,p_m(F))\]
+}
+\begin{proof}
+	(well-defined)\\
+	Since 
+	\[\begin{tikzcd}
+		E\ar[r]& F\ar[r]&G\ar[r]& E[1] \hspace{5mm}\text{(exact)}\Longrightarrow p_1(E)\ar[r]&p_1(F)\ar[r]&p_1(G)\ar[r]&p_1(E[1])\hspace{5mm}\text{(exact)}\\
+	\end{tikzcd}\]
+	\[ [F]-[E]-[G]=0\Longrightarrow [p_i(F)] - [p_i(E)] - [p_i(G)] = 0\]
+	(injection)\\
+	\begin{align*}
+		[F]&\sim [F_2] + [C_1]\\
+			&\sim [F_3] + [C_2] + [C_1] \\
+			\vdots\\
+			&\sim [C_m] + \cdots + [C_1]
+	\end{align*}
+	Therefore $(p_1(F),\ldots, p_m(F)) = 0$ means $[F] = 0$\\
+	(surjection)
+\end{proof}
+
+\mythm{
+	\begin{itemize}
+		\item[(i)]
+			Define $\mathcal D'\subset\mathcal D$ as $C_i\in\mathcal C_i$
+		\item[(ii)]
+	\end{itemize}
+}
+\end{document}
+
