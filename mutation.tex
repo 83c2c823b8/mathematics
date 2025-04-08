@@ -114,6 +114,33 @@ This indicates $p_1(g)\circ p_1(f) = p_1(g\circ f)$ and $p_{2,m}(g)\circ p_{2,m}
 	(surjection)
 \end{proof}
 
+\mylem{
+	\[B\sqcup_{A}C\simeq \Cok \begin{pmatrix}-f\\ g\end{pmatrix} \]
+}
+\begin{proof}
+		\[
+		\begin{tikzcd}
+			A \ar[d,"g",swap]\ar[r,"f"]& B\ar[d,"i_B"]\\
+			C\ar[r,"i_C",swap]& P\arrow[ul, phantom, "\Box"] 
+		\end{tikzcd}
+	\]
+	\[q\colon B\oplus C\rightarrow (B\oplus C)/\Im\begin{pmatrix}-f\\ g\end{pmatrix}\eqcolon P\]
+	\begin{gather*}
+		i_B\coloneq q\circ \iota_{B}\hspace{5mm}i_C\coloneq q\circ\iota_{C}
+	\end{gather*}
+	\begin{align*}
+		i_B\circ f - i_C\circ g = q\circ\iota_B\circ f - q\circ\iota_C\circ g = q\circ \begin{pmatrix}-f\\ g\end{pmatrix}= -q\circ \begin{pmatrix}-f\\ g\end{pmatrix}= 0
+	\end{align*}
+	 Let $j_B\colon B\rightarrow Q$, $j_C\colon C\rightarrow Q \st j_B\circ f = j_C\circ g$ and $ j\coloneq (j_B,j_C)$, then 
+	 \[j\circ (-f,g) = -j_B\circ f + j_C\circ g = 0\]
+	 \[\begin{tikzcd}
+		 A \ar[d,"g",swap] \ar[r,"f"] & B \ar[d,"i_B"] \ar[ddr, bend left=20, "j_B"] & \\
+		 C \ar[r,"i_C",swap] \ar[drr, bend right=20, "j_C", swap] & P \ar[dr, dashed, "\exists !u", description] \arrow[ul, phantom, "\Box"] & \\
+		 && Q
+	 \end{tikzcd}
+	\]
+	By universal property of cokernel, there uniquely exists $u$ commutes the diagram.
+\end{proof}
 \mythm{
 	\begin{itemize}
 		\item[(i)]
@@ -121,5 +148,8 @@ This indicates $p_1(g)\circ p_1(f) = p_1(g\circ f)$ and $p_{2,m}(g)\circ p_{2,m}
 		\item[(ii)]
 	\end{itemize}
 }
+\[\chi = (\chi_{ij})\]
+\begin{align*}
+	\chi_{ij} \coloneq \sum_{p\in\mathbb Z}(-1)^p\dim_{\C}\Hom_{\mathcal D}(E_i,E_j[p])
+\end{align*}
 \end{document}
-
