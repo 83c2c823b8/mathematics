@@ -9,12 +9,13 @@
 \newcommand{\douchi}{\Longleftrightarrow}
 %\newcommand{\lxra}[1]{\overset{#1}{\longrightarrow}}
 \newcommand{\lem}[2]{\begin{itembox}[l]{Lem .#1}#2\end{itembox}}%
-\renewcommand{\qedsymbol}{$\blacksquare$}%
+\renewcommand{\qedsymbol}{$\square$}%
 \newcommand{\maru}{\scalebox{0.75}{\circ}}%
 \newcommand{\id}{\mathrm{id}}%
 \newcommand{\ob}{\mathrm{ob}}
 \newcommand{\mor}{\mathrm{mor}}
-\newcommand{\abel}{\mathcal A}
+\newcommand{\Coim}{\mathrm{Coim}}
+\DeclareMathOperator{\thick}{\mathrm{thick}}
 \newcommand{\Ltensor}{\overset{\mathbb{L}}{\otimes}}
 \DeclareMathOperator{\Hom}{\mathrm{Hom}}%
 \DeclareMathOperator{\Ext}{\mathrm{Ext}}%
@@ -50,7 +51,7 @@
 \newcommand{\E}{{\mathcal E}}
 \newcommand{\F}{{\mathcal F}}
 \newcommand{\G}{{\mathcal G}}
-%\newcommand{\H}{{\mathcal H}}
+\renewcommand{\H}{{\mathcal H}}
 \newcommand{\I}{{\mathcal I}}
 \newcommand{\J}{{\mathcal J}}
 \newcommand{\K}{{\mathcal K}}
@@ -90,6 +91,12 @@
 	\newtheorem{rem}[thm]{注意}
 	\newtheorem{notation}[thm]{記号法}
 	\newtheorem*{pf}{証明}
-%\theoremstyle{proof}
-%	\newtheorem*{comp}{補足}
-%\def\proofname{証明}
+\theoremstyle{proof}
+	\newtheorem*{comp}{補足}
+
+
+\renewcommand{\bibname}{参考文献}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+\newcounter{mathematicapage}
+\def\proofname{証明}

@@ -1,6 +1,6 @@
 \section{t-structure}
 \begin{defn}\cite{BBD}
-		$\D$を三角圏．直和因子と同型を取る操作で閉じている加法部分圏$\D^{\le 0},\D^{\ge 0}\subset\D$が次の条件を満たすとき，$(\D^{\le 0},\D^{\ge 0})$を$\D$のt-構造と呼ぶ．
+		$\D$を三角圏．thick部分圏$\D^{\le 0},\D^{\ge 0}\subset\D$が次の条件を満たすとき，$(\D^{\le 0},\D^{\ge 0})$を$\D$のt-構造と呼ぶ．
 		$\D^{\le n}\coloneq\D^{\le 0}[-n],\hspace{3mm}\D^{\ge n}\coloneq\D^{\ge 0}[-n] $
 		\begin{itemize}
 			\item[(i)]
@@ -11,7 +11,7 @@
 			\item[(iii)]
 				任意の$E\in\D$に対して
 				\[\tau_{\le 0}E\rightarrow E \rightarrow \tau_{\ge 1}E\rightarrow \tau_{\le 0}E[1]\]
-				となるような$\tau_{\le 0}E\in\D^{\le 0},\ \tau_{\ge 1}E\in\D^{\ge 1}$が存在する．
+				となるような$\tau_{\le 0}E\in\D,\ \tau_{\ge 1}E\in\D^{\ge 1}$が存在する．
 		\end{itemize}
 \end{defn}
 
@@ -24,25 +24,8 @@
 	\begin{proof}
 		$E\in\mathcal (\D^{\le 0})^\perp$ を任意にとる．定義より以下の完全三角形がとれる．
 				\[\tau_{\le 0}E\rightarrow E \rightarrow \tau_{\ge 1}E\rightarrow \tau_{\le 0}E[1]\]
-				定義より，$\tau_{\le 0}E\rightarrow E$は0射であるので，$\tau_{\ge 1}E\simeq E\oplus\tau_{\le 0}E[1]\in \D^{\ge 1}$．直和因子と同型を取る操作で閉じているので$E\in\D^{\ge 1}$．\\
-				一意性については，別の$F\in\D^{\le 0},\ G\in\D^{\ge 1}$と完全三角形
-				\[F\rightarrow E \rightarrow G\rightarrow F[1]\]
-\end{proof}
-\begin{defn}\cite{BBD}
-	$(D^{\le 0},\D^{\ge 0})$がt-構造のを与えるとき，$\D$の部分圏$\H\coloneq\D^{\le 0}\cap\D^{\ge 0}$はt-構造の核(the heart of t-structure)と呼ばれる．
-\end{defn}
-
-\begin{lemm}\cite{BBD}
-	$\H$は核，余核をもつ．
-\end{lemm}
-\begin{proof}
-	$E,F\in\H$，$f\in\Hom_{\H}(E,F)$を任意にとる．このとき，三角圏の公理より以下の完全三角形
-	\[G\xrightarrow{e}E\xrightarrow{f}F\xrightarrow{g}G[1]\]
-	が存在する．t-構造の定義より
-	\[X\xrightarrow{x}G[1]\xrightarrow{y}Y\rightarrow X[1]\]
-	が完全三角形となるような$X\in \D^{\le 0},Y\in \D^{\ge 1}$が存在する．このとき，
-	\[y\circ g\colon B\rightarrow Y\]
-	が$f$の余核を与えることを示す．
+				定義より，$\tau_{\le 0}E\rightarrow E$は0射であるので，$\tau_{\ge 1}E\simeq E\oplus\tau_{\le 0}E[1]\in \D^{\ge 1}$．直和因子と同型を取る操作で閉じているので$E\in\D^{\ge 1}$\\
+一意性は半直交分解と同じ．
 \end{proof}
 
 \begin{lemm}

@@ -34,7 +34,14 @@
 \end{defn}
 
 \begin{defn}
-	加法圏$\D$がアーベル圏であるとは
+	加法圏$\A$がアーベル圏(Abelian category)であるとは以下を満たす場合である．
+	\vspace{-3mm}
+	\begin{itemize}
+		\item[(i)]
+			$\A$の任意の射$f$に対し，核$\Ker f$と余核$\Cok f$が存在する．
+		\item[(ii)]
+			$\A$の任意の射$f$に対し，自然な同型\ $\Coim(f)\simeq\Im f$が存在する．
+	\end{itemize}
 \end{defn}
 
 \begin{defn}
@@ -64,7 +71,7 @@
 	\]
 	が完全三角形であることと
 	\[
-		E_2\xrightarrow{v} E_3\xrightarrow{w} E_1\xrightarrow{-u[1]}  E_2[1]
+		E_2\xrightarrow{v} E_3\xrightarrow{w} E_1[1]\xrightarrow{-u[1]}  E_2[1]
 	\]
 	が完全三角形であることが同値．
 	\item[(v)]
@@ -94,5 +101,22 @@
 			X \ar[r,"u",dotted]& Y\ar[r,"v",dotted]& Z \ar[r,"w",dotted]& X[1]\\
 		\end{tikzcd}
 			\]
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	$\D$を三角圏，$\C$をその充満部分加法圏としたとき以下の用語を定義する．
+	\begin{itemize}
+		\item[(i)]
+			$\C$の$\D$における右（左）直交部分圏(right (left) orthogonal subcategory)$\C^\perp,{}^\perp\C$を$\D$の充満部分圏として
+			\[\C^\perp\coloneq \{E\in\D\mid\forall F\in\C,\ \Hom_{\D}(E,F)=0\}\]
+			\[{}^\perp\C\coloneq \{F\in\D\mid\forall E\in\C,\ \Hom_{\D}(E,F)=0\}\]
+		\item[(ii)]
+			$\C$が$\D$の狭義充満部分圏(strictly full subcategory)であるとは以下を満たすときである．\\
+			$E\in\C$かつ$F\in\D$に対して$E\simeq F$ならば$F\in\C$
+		\item[(iii)]
+			$\C$の$\D$におけるthick閉包とは直和因子を取る操作で閉じている最小の狭義充満部分三角圏のことである．それを$\thick \C$と記す．
+		\item[(iv)]
+			$\C$がthick部分圏(thick subcategory)であるとは，$\C = \thick\C$が成り立つときをいう．
 	\end{itemize}
 \end{defn}
