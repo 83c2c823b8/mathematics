@@ -1,107 +1,7 @@
-\RequirePackage{luatex85}
-\documentclass[leqno]{ltjsarticle}
-\usepackage{luatexja-fontspec}
-\usepackage[top=10truemm,bottom=10truemm,left=20truemm,right=20truemm]{geometry}
-\usepackage{luatexja} 
-\usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,test,tikz-cd}
-\usetikzlibrary{arrows.meta,calc}
-\titleformat*{\section}{\Large\bfseries}
-\setlength{\parindent}{0pt}
-\pagestyle{empty}
-%\everymath{\displaystyle}
-\begin{document}
-%{\textbf{\Large{}}}\hspace{\fill} {\texttt{\Large{04A21051}}}{\Large{Yudai Yamamoto}}\\
-\section{三角圏の公理}
-	加法圏$\D$と自己同値$[1]$に対して以下を満たすとき三角圏と呼ぶ．
-	\begin{itemize}
-		\item[(i)]
-			\[E\xrightarrow{\id}E\rightarrow 0 \rightarrow E[1]\]
-			は完全三角形．
-		\item[(ii)]
-			\[
-		\begin{tikzcd}
-			E_1\ar[r]\ar[d,"f"]& E_2\ar[r]\ar[d,"g"]& E_3\ar[r]\ar[d,"h"] & E_1[1]\ar[d,"f\texttt{[1]}"]\\
-			F_1\ar[r]& F_2\ar[r]& F_3\ar[r] & F_1[1]\\
-		\end{tikzcd}
-			\]
-			上の可換図式において，$f,g,h$が同型で$F_1\rightarrow F_2\rightarrow F_3 \rightarrow F_1[1]$が完全三角形なら$F_1\rightarrow F_2\rightarrow F_3 \rightarrow F_1[1]$も完全三角形
-		\item[(iii)]
-			任意の$E\xrightarrow{f}F$は
-			\[E\xrightarrow{f} F\rightarrow G \rightarrow E[1]\]
-		と完全三角形に拡張できる．
-	\item[(iv)]
-		\[
-			E_1\xrightarrow{u} E_2\xrightarrow{v} E_3\xrightarrow{w}  E_1[1]
-	\]
-	が完全三角形であることと
-	\[
-		E_2\xrightarrow{v} E_3\xrightarrow{w} E_1\xrightarrow{-u[1]}  E_2[1]
-	\]
-	が完全三角形であることが同値．
-	\item[(v)]
-		\[
-		\begin{tikzcd}
-			E_1\ar[r]\ar[d,"f"]& E_2\ar[r]\ar[d,"g"]& E_3\ar[r]\ar[d,"h",dotted] & E_1[1]\ar[d,"f\texttt{[1]}"]\\
-			F_1\ar[r]& F_2\ar[r]& F_3\ar[r] & F_1[1]\\
-		\end{tikzcd}
-	\]
-	2つの完全三角形と図式を可換にする$f,g$が存在したとき，すべての四角形を可換にする$h$が存在する．
-
-	\item[(vi)]
-		八面体公理\\
-			\[
-				\begin{tikzcd}[row sep=5pt]
-			E \ar[r,"f"]& F\ar[r,"h"]& Z \ar[r]& E[1]\\
-			E \ar[r,"g\circ f"]& G\ar[r,"l"]& Y \ar[r]& E[1]\\
-			F \ar[r,"g"]& G\ar[r,"k"]& X \ar[r]& F[1]\\
-		\end{tikzcd}
-			\]
-	上記の3つの完全三角形に対して，以下の図式のすべての四角形を可換にし，4行目を完全三角形にするような$u,v,w$が存在する．
-			\[
-		\begin{tikzcd}
-			E \ar[r,"f"]\ar[d,equal]& F\ar[r,"h"]\ar[d,"g",swap]& Z\ar[d,"u",dotted] \ar[r]& E[1]\ar[d,equal]\\
-			E \ar[r,"g\circ f"]\ar[d,"f",swap]& G\ar[r,"l"]\ar[d,equal]& Y\ar[d,"v",dotted] \ar[r]& E[1]\ar[d,"f\texttt{[1]}"]\\
-			F \ar[r,"g"]\ar[d,"h",swap]& G\ar[r,"k"]\ar[d,"l",swap]& X \ar[r]\ar[d,equal]& F[1]\ar[d,"h\texttt{[1]}"]\\
-			Z \ar[r,"u",dotted]& Y\ar[r,"v",dotted]& X \ar[r,"w",dotted]& Z[1]\\
-		\end{tikzcd}
-			\]
-	\end{itemize}
-\section{t-structure}
-	\mydef{
-		$\D$を三角圏．充満部分三角圏$\D^{\le 0},\D^{\ge 0}\subset\D$が次の条件を満たすとき，$(\D^{\le 0},\D^{\ge 0})$を$\D$のt-構造と呼ぶ．
-		$\D^{\le n}\coloneq\D^{\le 0}[n],\hspace{3mm}\D^{\ge n}\coloneq\D^{\ge 0}[n] $
-		\begin{itemize}
-			\item[(i)]
-				$\D^{\le 0}\subset\D^{\le 1}\hspace{3mm}\D^{\ge 1}\subset\D^{\ge 0} $
-			\item[(ii)]
-				$\D^{\ge 1}\subset (\D^{\le 0})^\perp$\\
-				つまり，$\forall E\in \D^{\le 0},\ \forall F\in\D^{\ge 1},\ \Hom_{\D}(E,F)=0$
-			\item[(iii)]
-				任意の$E\in\D$に対して
-				\[\tau_{\le 0}E\rightarrow E \rightarrow \tau_{\ge 1}E\rightarrow \tau_{\le 0}E[1]\]
-				となるような$\tau_{\le 0}E\in\D,\ \tau_{\ge 1}E\in\D^{\ge 1}$が存在する．
-		\end{itemize}
-	}
-
-	\myprop{
-		\begin{itemize}
-				\item[(i)]$\D^{\ge 1}=(\D^{\le 0})^{\perp}$
-				\item[(ii)]$E$に対して，$\tau_{\le 0}E, \tau_{\ge 1}E$は同型を除いて一意に定まる．
-		\end{itemize}
-	}
-	\begin{proof}
-		$E\in\mathcal (\D^{\le 0})^\perp$ を任意にとる．定義より以下の完全三角形がとれる．
-				\[\tau_{\le 0}E\rightarrow E \rightarrow \tau_{\ge 1}E\rightarrow \tau_{\le 0}E[1]\]
-		定義より，$\tau_{\le 0}E\rightarrow E$は0射であるので，$\tau_{\ge 1}E\simeq$ 
-				
-	\end{proof}
-
-
-	射影的代数曲線$\defi$射影空間$\PP^n$内の1次元部分多様体\\ \\
 \section{安定性条件}
 	
 
-	\mydef{
+\begin{defn}\cite{BridgelandStab}
 		Abel圏$\A$上の安定性条件とは群準同型
 		\[Z\colon K(\A)\to \CC\]
 		で以下を満たすもの
@@ -115,33 +15,35 @@
 \end{itemize}
 $E(\neq 0)$が$Z$-半安定とは任意の部分対象$0\neq F\subsetneq E$に対して，$\arg Z(F) \le \arg Z(E)$
 ここで，
-\[\phi(E)\coloneq \frac{1}{\pi}\arg Z(E) \]
+\[\phi(E)\coloneq \frac{1}{\pi}\arg Z(E)\in (0,1] \]
 と定める．
-	}
-\mylem{
+\end{defn}	
+
+\begin{lemm}
 	$E,F\in\D$が半安定で$\phi(E)>\phi(F)$とき，
 	\[\Hom_{\D}(E,F)=0\]
-}
-\begin{proof}
+\end{lemm}
+\begin{pf}
 	$f\in\Hom_{\D}(E,F)$が$0$でないと仮定する．
 	\[0\rightarrow\Ker f\rightarrow E \rightarrow \Im f \rightarrow 0\]
 	の完全列が存在して$E$が半安定対象であることから$\phi(\Im f)\ge\phi(E)$．$\Im f\neq 0$が$F$の部分対象で$F$も半安定であることから$\phi(F)\ge\phi(\Im f)$．これらを合わせると$\phi(F)\ge\phi(E)$．仮定に矛盾．
-\end{proof}
+\end{pf}
 
-\mylem{
-	$\A\colon$アーベル圏，群準同型$Z\colon K(\A)\to \CC$が次の条件を満たすとき，HNフィルトレーションが存在する．つまり$Z$が安定性条件を定める．
-	\begin{itemize}
-		\item[(i)]
-		全射の無限列
-	\[E_1\twoheadrightarrow E_2\twoheadrightarrow E_3\twoheadrightarrow\cdots  \]
-	で$\phi (E_i)> \phi (E_{i+1})$となるものは存在しない．
-\item[(ii)]
-		無限降下列
-	\[E_1\supset E_2\supset E_3\supset \cdots  \]
-	で$\phi (E_{i+1}) > \phi(E_i)$となるものは存在しない．
-\end{itemize}
-}
-\begin{proof}\hfill\\
+\begin{lemm}\cite{BridgelandStab}
+		$\A\colon$アーベル圏，群準同型$Z\colon K(\A)\to \CC$が次の条件を満たすとき，HNフィルトレーションが存在する．つまり$Z$が安定性条件を定める．
+		\begin{itemize}
+			\item[(i)]
+			全射の無限列
+		\[E_1\twoheadrightarrow E_2\twoheadrightarrow E_3\twoheadrightarrow\cdots  \]
+		で$\phi (E_i)> \phi (E_{i+1})$となるものは存在しない．
+	\item[(ii)]
+			無限降下列
+		\[E_1\supset E_2\supset E_3\supset \cdots  \]
+		で$\phi (E_{i+1}) > \phi(E_i)$となるものは存在しない．
+	\end{itemize}
+\end{lemm}
+
+\begin{pf}\hfil
 	\begin{screen}
 	Step 1\hspace{5mm}\\
 	\bullet 任意の対象$E\in\A$には$\phi(A) \ge \phi(E)$を満たす半安定な部分対象$A$が存在する．\\
@@ -234,7 +136,7 @@ $E$が半安定対象のとき，任意の全射$E\twoheadrightarrow B'$に対�
 \[\phi(A)>\phi(E)>\phi(E')\ge\phi(B)\ge\phi(B')\]
 $A,B'$は半安定対象であり，前の補題より$\Hom_{\D}(A,B')=0$
 \[\begin{tikzcd}
-	A \ar[r,hookrightarrow]\ar[rd,"0",swap,]& E\ar[r,twoheadrightarrow]\ar[d,twoheadrightarrow]& E/A = E'\ar[ld,dotted]\\
+	A \ar[r,hookrightarrow]\ar[rd,"0",swap,]& E\ar[r,twoheadrightarrow]\ar[d,twoheadrightarrow]& E/A = E'\ar[ld,dotted,two heads]\\
 								 &B'
 \end{tikzcd}\]
 図式のように可換にする全射が普遍性から存在する．$E'\twoheadrightarrow B$がmdqなので$\mu(B')=\mu(B)$となり，mdqの条件より$E'\twoheadrightarrow B\twoheadrightarrow B'$と経由する．したがって$E\twoheadrightarrow B\twoheadrightarrow B'$が存在し，$E\twoheadrightarrow B$がmdqであることがわかる．\\
@@ -278,37 +180,54 @@ $E'$がmdqでない場合は$E$を$E'$に取り替えて議論を繰り返すこ
 	\end{tikzpicture}
 \end{center}
 から$\phi(B^2)\ge\phi(Q)$が得られる．$\phi(B^2)=\phi(Q)=\phi(B^1)$と仮定すると，$E\twoheadrightarrow B^1$がmdqであることから$E\twoheadrightarrow B^1\twoheadrightarrow Q$となって，$B^1$と$Q$の双方向に全射があることから$B^1\simeq Q$となり，$B^2=0$．これは矛盾．したがって，$\phi(B^2)>\phi(B^1)$が成り立つ．この操作は条件(ii)より有限回でとまり，その商は半安定なのでHNフィルトレーションを得る．
-\end{proof}
+\end{pf}
 
-\mydef{
+\begin{defn}
 	$\D\colon$三角圏．$\D$上の安定性条件とは，$\D$の有界な$t$-構造のHeart $\A\subset\D$と$\A$と$\A$上の安定性条件
 	\[Z\colon K(\D)=K(\A)\to\CC\]
 	$(Z,\A)$のことである．
-}
+\end{defn}
 
+\begin{defn}
 	三角圏$\D$におけるスライスとは部分圏の族$\{\P(\phi)\}_{\phi\in\RR}\subset\D$で次の条件を満たすもの\\
 	\bullet $\forall\phi\in\RR, \P(\phi + 1) = \P(\phi)[1]$\\
 	\bullet $\phi_1>\phi_2$で$E_i\in\P(\phi_i)$ならば$\Hom_{\D}(E_1,E_2)=0$\\
-	\bullet 任意の対象$E\in\D$に対して，
+	\bullet 任意の対象$E\in\D$に対して，実数列$\phi_1>\phi_2>\cdots >\phi_n$と
 	\[
-		\begin{tikzcd}
-			0\ar[r,equal]& E_0\ar[rr]& & E_{1}\ar[r]\ar[ld] &\cdots\ar[r] &E_{n-2}\ar[rr]&&E_{n-1}\ar[ld]\ar[rr]&&E\ar[ld]\\
+		\begin{tikzcd}[column sep=1.3em]
+			0\ar[r,equal]&E_0\ar[rr]& & E_{1}\ar[r]\ar[ld] &\cdots\ar[r] &E_{n-2}\ar[rr]&&E_{n-1}\ar[ld]\ar[rr]&&E_n\ar[ld]\ar[r,equal]&E\\
 									 &&F_{1}\ar[lu,dotted,"{[1]}"] &&&&F_{n-1}\ar[lu,dotted,"{[1]}"]&&F_n\ar[lu,dotted,"{[1]}"]
 		\end{tikzcd}
 	\]
 	$F_i\in\P(\phi_i)$
+\end{defn}
 
-	\mylem{
-		$\D$上に安定性条件をあたえることと，$\D$上のスライス$\P$と群準同型$Z\colon K(\D)\to\CC$の組$(Z,\P)$で，任意の$\phi\in\RR$と$0\neq E\in\P(\phi)$に対して$Z(E)\in\RR_{>0}e^{i\pi\phi}$を与えることは同値．
-	}
-	\begin{proof}
+\begin{lemm}
+		$\D$に安定性条件($\D$上の有界なt-構造とstability函数$Z$)をあたえることと，$\D$上のスライス$\P$と群準同型$Z\colon K(\D)\to\CC$の組$(Z,\P)$で，任意の$\phi\in\RR$と$0\neq E\in\P(\phi)$に対して$Z(E)\in\RR_{>0}e^{i\pi\phi}$を与えることは同値．
+\end{lemm}
+
+	\begin{pf}
 		安定性条件$(Z,\A)\rightarrow$スライス$\P$の構成\\
 		各$0<\phi\le 1$に対して，
 		\[\P(\phi)\coloneq \{E\in\A\mid E\colon Z\text{-半安定 }Z(E)\in\RR_{>0}e^{i\pi\phi}\}\cup \{0\}\]
 		$\phi\in\RR,\phi\in(k,k+1]$となる整数$k$をとって
 		\[\P(\phi)\coloneq \P(\phi - k)[k]\]
 		こう定めたとき，スライスになっていることを確かめる．\\
-		\bullet $\forall\phi\in\RR, \P(\phi + 1) = \P(\phi)[1]$は定義から従い．$\phi_1 > \phi_2$と$E_i\in\P(\phi_i)$に対して，$\Hom_{\D}(E_1,E_2)=0$が補題からしたがう．
-	\end{proof}
+		\bullet $\forall\phi\in\RR, \P(\phi + 1) = \P(\phi)[1]$は定義から従う．\\
+		\bullet $\phi_1 > \phi_2$と$E_i\in\P(\phi_i)$対して，$\Hom_{\D}(E_1,E_2)=0$\\
+		このとき$F_1,F_2\in\P((0,1])$を用いて，$E_1=F_1[m],\ E_2=F_2[n], (m>n \text{または}\ m=n, \phi(F_1) > \phi(F_2))$とかける．\\
+		$m=n$のときは補題より$0$であることがわかる．$m>n$のとき
+		$\Hom_{\D}(F_1[m],F_2[n])\simeq \Hom_{\D}(F_1,F_2[-(m-n)])$なので，$\Hom_{\D}(F_1,F_2[-k])=0\ k>0$を示せばよいが，$F_1\in\D^{\le 0},\ F_2[-k]\in\D^{\ge k}$なのでt-構造の定義より$0$となることがわかる．\\
+分解をもつことはt-構造の性質より，整数の列
+			\[k_1>k_2 \cdots > k_n\]
+			と分解
+	\[
+		\begin{tikzcd}[column sep=1.0em]
+			0\ar[r,equal]&E_0\ar[rr]& & E_{1}\ar[r]\ar[ld] &\cdots\ar[r] &E_{n-2}\ar[rr]&&E_{n-1}\ar[ld]\ar[rr]&&E_n\ar[ld]\ar[r,equal]&E\\
+									 &&A_{1}[k_1]\ar[lu,dotted,"{[1]}"] &&&&A_{n-1}[k_{n-1}]\ar[lu,dotted,"{[1]}"]&&A_n[k_n]\ar[lu,dotted,"{[1]}"]
+		\end{tikzcd}
+	\]
+	$A_j\in \A$が存在する．各$A_j$には仮定よりHNフィルトレーションが存在するので更に分解することで3つ目の条件が得られる．\\
+	逆に$\P$が与えられたとき，$\F^{\perp}[1]=\D^{\ge 0}\coloneq\P((0,\infty)), \F=\D^{\le 0}\coloneq\P((-\infty,1])$がt-構造を定める．スライスの条件より，
 
-\end{document}
+\end{pf}

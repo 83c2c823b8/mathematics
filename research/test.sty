@@ -4,24 +4,12 @@
 \newcommand{\mr}[1]{\mathrm{#1}}%
 \newcommand{\st}{\ \mathrm{s.t.}\ }%
 \newcommand{\ie}{\ \mathrm{i.e.}\ }%
-\newcommand{\thm}[2]{\begin{itembox}[l]{Thm. #1}#2\end{itembox}}%
-\newcommand{\DEF}[2]{\begin{itembox}[l]{Def. #1}#2\end{itembox}}%
-\newcommand{\defi}{\overset{\text{def}}{\Longleftrightarrow}}%
-\newcommand{\toi}[2]{\begin{itembox}[l]{問#1.}#2\end{itembox}}%
 \newcommand{\inv}{^{-1}}%　
 \newcommand{\lto}{\longrightarrow}%
 \newcommand{\douchi}{\Longleftrightarrow}
 %\newcommand{\lxra}[1]{\overset{#1}{\longrightarrow}}
 \newcommand{\lem}[2]{\begin{itembox}[l]{Lem .#1}#2\end{itembox}}%
 \renewcommand{\qedsymbol}{$\blacksquare$}%
-\newcounter{mythmcounter}[section] %
-\renewcommand{\themythmcounter}{\arabic{section}.\arabic{mythmcounter}}%
-\setcounter{mythmcounter}{0} %
-\newcommand{\mythm}[1]{\begin{itembox}[l]{\refstepcounter{mythmcounter}Thm {\themythmcounter}.} #1\end{itembox}}%
-\newcommand{\mylem}[1]{\begin{itembox}[l]{\refstepcounter{mythmcounter}Lem {\themythmcounter}.} #1\end{itembox}}%
-\newcommand{\myprop}[1]{\begin{itembox}[l]{\refstepcounter{mythmcounter}Prop {\themythmcounter}.} #1\end{itembox}}%
-\newcommand{\mydef}[1]{\begin{itembox}[l]{\refstepcounter{mythmcounter}Def {\themythmcounter}.} #1\end{itembox}}%
-\newcommand{\mycor}[1]{\begin{itembox}[l]{\refstepcounter{mythmcounter}Cor {\themythmcounter}.} #1\end{itembox}}%
 \newcommand{\maru}{\scalebox{0.75}{\circ}}%
 \newcommand{\id}{\mathrm{id}}%
 \newcommand{\ob}{\mathrm{ob}}
@@ -80,3 +68,28 @@
 \newcommand{\W}{{\mathcal W}}
 \newcommand{\X}{{\mathcal X}}
 \newcommand{\Z}{{\mathcal Z}}
+\theoremstyle{plain}
+	\newtheorem{thm}{定理}[section]
+	\newtheorem*{thm*}{定理}
+	\newtheorem{cor}[thm]{系}
+	\newtheorem{lemm}[thm]{補題}
+	\newtheorem{conj}[thm]{予想}
+	\newtheorem*{conj*}{予想}
+	\newtheorem{fact}[thm]{事実}
+	\newtheorem{prob}[thm]{問題}
+	\newtheorem{assum}[thm]{仮定}
+	\newtheorem{observ}[thm]{観察}
+	\newtheorem*{observ*}{観察}
+\theoremstyle{definition}
+	\newtheorem{prop}[thm]{命題}
+	\newtheorem{defn}[thm]{定義}
+	\newtheorem{axiom}[thm]{公理}
+	\newtheorem{ass}[thm]{仮定}
+	\newtheorem{exmp}[thm]{例}
+\theoremstyle{remark}
+	\newtheorem{rem}[thm]{注意}
+	\newtheorem{notation}[thm]{記号法}
+	\newtheorem*{pf}{証明}
+%\theoremstyle{proof}
+%	\newtheorem*{comp}{補足}
+%\def\proofname{証明}

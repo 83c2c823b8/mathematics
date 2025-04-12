@@ -1,0 +1,1396 @@
+\documentclass[a4paper,11pt]{jbook}
+\usepackage[utf8]{inputenc}
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{16cm}
+\setlength{\parindent}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+\raggedbottom
+\usepackage{amsmath,amsthm,amssymb,amsfonts,amscd,graphicx,bm,setspace}
+%
+\input xy
+\xyoption{all}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+	\newtheorem{thm}{定理}[section]
+	\newtheorem*{thm*}{定理}
+	\newtheorem{cor}[thm]{系}
+	\newtheorem{lem}[thm]{補題}
+	\newtheorem{conj}[thm]{予想}
+	\newtheorem*{conj*}{予想}
+	\newtheorem{fact}[thm]{事実}
+	\newtheorem{prob}[thm]{問題}
+	\newtheorem{assum}[thm]{仮定}
+	\newtheorem{observ}[thm]{観察}
+	\newtheorem*{observ*}{観察}
+\theoremstyle{definition}
+	\newtheorem{prop}[thm]{命題}
+	\newtheorem{defn}[thm]{定義}
+	\newtheorem{axiom}[thm]{公理}
+	\newtheorem{ass}[thm]{仮定}
+	\newtheorem{exmp}[thm]{例}
+\theoremstyle{remark}
+	\newtheorem{rem}[thm]{注意}
+	\newtheorem{notation}[thm]{記号法}
+	\newtheorem*{pf}{証明}
+\theoremstyle{proof}
+	\newtheorem*{comp}{補足}
+
+
+\renewcommand{\bibname}{参考文献}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+
+\def\proofname{証明}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\renewcommand{\theenumi}{\roman{enumi}}
+\renewcommand{\labelenumi}{$(\rm{\theenumi})$}
+%
+\numberwithin{equation}{section}
+%
+\def\AA{{\mathbb A}}
+\def\CC{{\mathbb C}}
+\def\EE{{\mathbb E}}
+\def\FF{{\mathbb F}}
+\def\HH{{\mathbb H}}
+\def\LL{{\mathbb L}}
+\def\MM{{\mathbb M}}
+\def\NN{{\mathbb N}}
+\def\PP{{\mathbb P}}
+\def\QQ{{\mathbb Q}}
+\def\RR{{\mathbb R}}
+\def\SS{{\mathbb S}}
+\def\UU{{\mathbb U}}
+\def\VV{{\mathbb V}}
+\def\WW{{\mathbb W}}
+\def\XX{{\mathbb X}}
+\def\ZZ{{\mathbb Z}}
+%
+\def\A{{\mathcal A}}
+\def\B{{\mathcal B}}
+\def\C{{\mathcal C}}
+\def\D{{\mathcal D}}
+\def\E{{\mathcal E}}
+\def\F{{\mathcal F}}
+\def\G{{\mathcal G}}
+\def\H{{\mathcal H}}
+\def\I{{\mathcal I}}
+\def\J{{\mathcal J}}
+\def\K{{\mathcal K}}
+\def\L{{\mathcal L}}
+\def\M{{\mathcal M}}
+\def\N{{\mathcal N}}
+\def\O{{\mathcal O}}
+\def\P{{\mathcal P}}
+\def\Q{{\mathcal Q}}
+\def\R{{\mathcal R}}
+\def\S{{\mathcal S}}
+\def\T{{\mathcal T}}
+\def\U{{\mathcal U}}
+\def\V{{\mathcal V}}
+\def\W{{\mathcal W}}
+\def\X{{\mathcal X}}
+\def\Z{{\mathcal Z}}
+%
+\def\k{{\mathbf k}}
+%
+\def\Aut{{\rm Aut}}
+\def\Auteq{{\rm Auteq}}
+\def\p{{\partial }}
+\def\-Mod{\text{-}{\rm Mod}}
+\def\Mod{{\rm Mod}}
+\def\Mod-{{\rm Mod}\text{-}}
+\def\Pre-Tr{{\rm Pre}\text{-}{\rm Tr}}
+\def\Tr{{\rm Tr}}
+\def\Hom{{\rm Hom}}
+\def\End{{\rm End}}
+\def\HHom{{\mathcal H}om}
+\def\per{{\rm per}}
+\def\Ind{{\rm Ind}}
+\def\proj{{\displaystyle \lim_{\longleftarrow}}}
+\def\induc{{\displaystyle \lim_{\longrightarrow}}}
+\def\adj{{\varphi_{*}}}
+\def\leftadj{{\varphi^{\dagger}}}
+\def\rightadj{{\varphi^{\ddagger}}}
+\def\Fct{{\rm Fct}}
+\def\Set{{\textbf{Set}}}
+\def\ab{{\textbf{ab}}}
+\def\Proj{{“\proj \hspace{-0.2em}”}}
+\def\Induc{{“\induc \hspace{-0.2em}”}}
+\def\srightarrow{{\longrightarrow \hspace{-1.4em} \raisebox{1ex}{$\sim$} \hspace{0.6em}}}
+%
+\def\Stab{{\rm Stab}}
+\def\CY{{\rm CY}}
+%
+\def\Xreg{X^{\rm reg}}
+\def\realroot{\Delta^{\rm re}}
+\def\imroot{\Delta^{\rm im}}
+%
+\def\Im{{\rm Im}\,}
+\def\Re{{\rm Re}\,}
+%
+\def\Mreg{M^{\rm reg}}
+\def\Lie{{\rm Lie}}
+%
+\def\id{{\rm id}}
+%
+\def\ds{/\hspace{-1.0mm}/}
+%
+\def\h{{\mathfrak h}}
+\def\m{{\mathfrak m}}
+\def\p{\partial }
+\newcommand{\Res}{\mathop{\rm Res}}
+\newcommand{\usimeq}{\mathop{\simeq}}
+\newcommand{\Jac}{\mathop{\rm Jac}}
+\def\ns{{\nabla}\hspace{-1.4mm}\raisebox{0.3mm}{\text{\footnotesize{\bf /}}}}
+\def\Hugesymbol#1{\mbox{\strut\rlap{\smash{\Huge$#1$}}\quad}}
+
+\def\leftf{[\hspace{-1.5mm}[}
+\def\rightf{]\hspace{-1.5mm}]}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{ある有理関数と原始形式に付随するFrobenius potential}
+\date{}%{today}
+\author{大阪大学大学院理学研究科数学専攻\\
+鳩山　雄大}
+\maketitle
+%\begin{abstract}
+%\end{abstract}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{序}
+\addcontentsline{toc}{chapter}{序}
+
+	Frobenius構造とは，複素多様体の各点の接空間上に可換Frobenius代数の構造が与えられ，その代数構造がいくつかの条件を満たすものである\cite{d:1}．このFrobenius構造は1980年代にB.~Dubrovin氏によって公理化されたもので，$2$次元位相的場の理論を背景に持つ．複素多様体にFrobenius構造が与えられたとき，Frobenius多様体という．Frobenius多様体上にはFrobenius potentialと呼ばれる各点の近傍上に定まる正則関数が存在し，これと平坦座標から，Frobenius構造が局所的に決定できることが知られている．Frobenius potenialはWDVV方程式と呼ばれるFrobenius代数の結合則をあらわす非線形偏微分方程式系をみたす．WDVV方程式という呼称は，この偏微分方程式系に着目した物理学者たちの名前（Witten, Dijkgraaf, H.~Verlinde, E.~Verlinde）による．
+
+	どのような状況下で与えられたFrobenius構造が同型となるかを考察することは重要である．その理由は，ミラー対称性がFrobenius構造の同型を必要とする点にある．しかし，Frobenius構造の間には準同型定理に類する結果が存在しないため，異なる構成に基づくFrobenius構造を比較するのは困難である．この問題に対処する一つの方法として，適切な初期値設定の下でのWDVV方程式の解の一意性（すなわちFrobenius potentialの一意性）を利用するアプローチが挙げられる\cite{ist, shir}．
+
+	$2$学年上の先輩にあたる高野~太誠氏は修士論文\cite{takano}においてWeierstrassの$\wp$関数を用いた楕円関数の変形理論と原始形式から得られるFrobenius potentialを具体的な階数で実際に計算し，Frobenius potentialの有理性やWDVV方程式の初期値を決定しようとした．しかし，一般の階数では，それらをうまく決定することができなかった．ここで，高野氏が計算したものより少し簡略化したものを考えることで，一般の階数で定式化できるものがあるかを考察した．
+
+	$\mu\in\ZZ_{\geq 4}$とする．複素多様体$M:=(\CC\times\CC^*)\times(\CC^*)^{2}\times\CC^{\mu-4}$を考え，座標系を$(s_1, \cdots, s_\mu)$とする．$\infty,\  0$で$1$位の極，$e^{s_3}$で$(\mu-3)$位の極をもつような，$\PP^1$上の有理関数
+\begin{align}
+F(z;s_1,s_2,\cdots,s_\mu) := z + s_1 +\frac{e^{s_2}}{z} + \sum_{i=1}^{\mu-3}\frac{ze^{(i-1)s_3}s_{i+3}s_{\mu}^{i-1}}{(z-e^{s_3})^i} \notag
+\end{align}
+を考える．このとき，複素多様体$M$に原始形式$\dfrac{dz}{z}$から定まるFrobenius構造を与えて，Frobenius多様体を構成できる．
+
+	本論文では，$\mu=4, 5, 6, 7, 8$の場合に実際にFrobenius多様体$(M, \circ, \bm{e}, E, \eta)$の平坦座標を構成し，$F$から得られるFrobenius potentialをMathematicaを用いて計算した．類似の先行研究としてMa-Zuoの\cite{mz}がある．この論文では$z=\infty$で$\mu-1$位の極，$z=0$で$1$位の極，$z=e^{s_\mu}$で$\mu-3$位の極をもつ有理関数に付随するFrobenius potentialが$\mu=4, 5$の場合に計算されている．本論文の計算結果は\cite{mz}とは異なる有理関数に付随するFrobenius potentialを計算したものであり，リーマン面上のある量になっていることが期待されるものである．%修正%
+簡単な例として，$\mu=6$の場合を概説する．
+
+	$\mu=6$のとき，$F(z;s_1,s_2,s_3,s_4,s_5,s_6)=z+\dfrac{e^{s_2}}{z}+\dfrac{zs_4}{z-e^{s_3}}+\dfrac{ze^{s_3}s_5s_6}{(z-e^{s_3})^2}+\dfrac{ze^{2s_3}s_6^3}{(z-e^{s_3})^3}+s_1$である．このとき，$t_1=s_1, \ t_2=s_2, \ t_3=s_3, \ t_4=s_4, \ t_5=s_5-\dfrac{1}{2}s_6^2, \ t_6=s_6$とおくと，$(t_1,t_2,t_3,t_4,t_5,t_6)$は平坦座標となる．Frobenius potential $\F$は次のようになる．
+\begin{thm*}
+組$\left(F,\dfrac{dz}{z}\right)$に対する$M:=\CC^3\times(\CC^*)^3$上の\rm{Frobenius構造}$(\circ,e=\partial_{t_1},E=t_1\partial_{t_1}+2\partial_{t_2}+\partial_{t_3}+t_4\partial_{t_4}+\dfrac{2}{3}t_5\partial_{t_5}+\dfrac{1}{3}t_6\partial_{t_6},\eta)$について，Frobenius potentialは以下のように与えられる．
+\begin{itemize}
+\item Frobenius potential $\F$は次のように与えられる．
+\begin{align*}
+	\F(t_1,t_2,t_3,t_4,t_5,t_6)=&\frac{1}{2}t_1^2t_2+t_1t_3t_4+t_1t_5t_6+\frac{1}{2}t_3t_4^2 +\dfrac{t_4t_5^2}{6t_6} + \dfrac{1}{2}t_4t_5t_6 + \frac{1}{24}t_4t_6^3 -\frac{t_5^4}{108t_6^2} \notag \\
+&-\frac{1}{24}t_5^2t_6^2-\frac{1}{960}t_6^6 +\dfrac{1}{2}t_4^2\log{t_6}+e^{t_2}-e^{t_2-t_3}\left(t_4-t_5t_6+\dfrac{1}{2}t_6^3\right) \notag \\
+&+e^{t_3}\left(t_4+t_5t_6+\dfrac{1}{2}t_6^3\right)
+\end{align*}
+\end{itemize}
+\end{thm*}
+	
+	他の階数の計算結果と合わせると，一般の階数について次のような仮説が立てられた．
+\begin{observ*}\rm 
+組$\left(F,\dfrac{dz}{z}\right)$に対する$M:=(\CC\times\CC^*)\times(\CC^*)^{2}\times\CC^{\mu-4}$上のFrobenius構造を考える．ある平坦座標系$(t_1, \cdots, t_\mu)$をとったとき，Frobenius potentialを次のようにあらわすことができる．ただし，$f,g \in \QQ[t_4, t_5, \cdots, t_{\mu}]$で，$q \in \QQ[t_\mu, t_\mu^{-1}][t_4, t_5, \cdots, t_{\mu-1}]$とする．
+\begin{align*}
+\F(\bm{t})&=t_1\left(\frac{1}{2}t_2^2+t_3t_4+t_5t_\mu+\frac{1}{2(\mu-3)}\sum_{k=6}^{\mu}t_kt_{\mu-k+5}\right) 
++q(t_3,t_4,\cdots,t_{\mu-1}, t_\mu) \notag \\
+&+e^{t_2-t_3}\cdot f(t_4,t_5,\cdots,t_\mu)  
++e^{t_3}\cdot g(t_4,t_5,\cdots,t_\mu)
++e^{t_2}+\frac{1}{2}t_4^2\log{t_\mu} \notag
+\end{align*}
+また，$f, \ g, \ q$について，次のようなことが予想される．
+\begin{enumerate}
+\item[o1.] $f$と$g$の同類項について，係数の絶対値が等しい，
+
+\item[o2.] $q$の有理項について$(分子の単項式としての次数)-(分母の単項式としての次数)=2$となる．
+\end{enumerate}
+\end{observ*}
+
+	この観察結果のうち，$t_1$を含む項は定義から直ちに確定する．また，$e^{t_2}, \ \dfrac{1}{2}t_4^2\log{t_\mu}$となる項に関しては証明することができた．その証明では$\bm{s}$と平坦座標系$\bm{t}$の間の関係が重要となったが，この関係はよく知られている結果である（参照\cite{d:1,S1202-Saito,sat,tak:2}）．$f$と$g$の間の符号の変化と，$q$の有理項が$2$次となることについては明らかにすることができなかった．
+\\ \\ \\
+\noindent{\Large{\textbf{謝辞}}}
+
+	本論文を執筆するにあたり，指導教員の高橋篤史教授には，研究における様々な場面で多大なご助力をいただき，研究外のことも指導していただきました．また，白石勇貴講師にも貴重なご意見をいただきました．心より感謝いたします．
+	最後に，研究中，日常生活を助けていただき，温かく見守っていただいた家族に最大限の感謝の意を表したいと思います．
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{準備}
+
+\section{Frobenius多様体}
+\label{section : Frobenius manifold}
+Frobenius多様体の一般論に関する内容は，文献\cite{tak:2}を参考にした．
+\subsection{Frobenius多様体の定義}
+まず初めに，本論文で基本的な概念となるFrobenius多様体を定義する．
+\begin{defn}
+\label{definitionoffrobeniusmanifold}
+$M=(M, \O_M)$を$\mu$次元連結複素多様体とし，$\T_M$を接層，$\Omega^1_M$を余接層とする．$M$上の{\bf 階数$\mu$次元$d$のFrobenius構造}(Frobenius structure of rank $\mu$ and dimension $d$)とは
+\begin{itemize}
+\item $\T_M$上の非退化対称$\O_M$-双線型形式$\eta :\T_M\times\T_M\to\O_M$，
+\item $\T_M$上の結合的かつ可換な$\O_M$-双線型な積$\circ:\T_M\times\T_M\to\T_M$，
+\item {\bf 単位ベクトル場}(unit vector field, primitive vector field)とよばれる，積$\circ$に関する単位元となる$M$上の正則ベクトル場$e\in\Gamma(M,\T_M)$，
+\item {\bf Euler\ ベクトル場}(Euler vector field)とよばれる$M$上の正則ベクトル場$E\in\Gamma(M,\T_M)$，
+\end{itemize}
+の組$(\eta, \circ , e,E)$で，以下の性質を満たすもののこと：
+\begin{enumerate}
+\item 積 $\circ$は$\eta$に関して不変である． すなわち，
+\begin{equation}
+\eta(\delta\circ\delta',\delta'')=\eta(\delta,\delta'\circ\delta''),\quad
+\delta,\delta',\delta''\in\T_M
+\end{equation}
+が成り立つ．
+\item 非退化で対称な$\O_M$-双線型形式$\eta$についての{\rm Levi}--{\rm Civita}接続 $\ns:\T_M\to\T_M\otimes_{\O_M}\Omega_M^1$ は平坦である． すなわち，
+\begin{equation}
+[\ns_\delta,\ns_{\delta'}]=\ns_{[\delta,\delta']},\quad \delta,\delta'\in\T_M
+\end{equation}
+が成り立つ．
+\item $C_\delta\delta':=\delta\circ\delta'$, $(\delta,\delta'\in\T_M)$を用いて定義される$\O_M$-線形写像$C:\T_M\to\T_M\otimes_{\O_M}\Omega_M ; \delta\mapsto C(\delta):=(-\circ \delta)$ は平坦である． すなわち，
+\begin{equation}
+\ns C=0
+\end{equation}
+が成り立つ．言い換えると，$\delta,\delta',\delta''\in\T_{M}$に対して
+\begin{equation}
+\ns_{\delta}(C_{\delta'}\delta'')-C_{\delta'}(\ns_{\delta}\delta'')-C_{\ns_{\delta}\delta'}\delta''=\ns_{\delta'}(C_{\delta}\delta'')-C_{\delta}(\ns_{\delta'}\delta'')-C_{\ns_{\delta'}\delta}\delta''
+\end{equation}
+が成り立つ．
+\item  積$\circ $に関する単位元 $e$ は $\ns$-平坦な正則ベクトル場である． すなわち，
+\begin{equation}
+\ns e=0
+\end{equation}
+が成り立つ．
+\item $d$を複素数とする．Euler\ ベクトル場 $E$のLie\ 微分 ${\rm Lie}_{E}$について積$\circ$と$\eta$は斉次であり，それらの次数はそれぞれ$1$と$2-d$である．すなわち，
+\begin{equation}
+{\rm Lie}_E(\circ)=\circ,\quad {\rm Lie}_E(\eta)=(2-d)\eta
+\end{equation}
+が成り立つ．言い換えると，$\delta,\delta'\in\T_{M}$に対して
+\begin{align}
+E(\eta(\delta,\delta'))-\eta([E,\delta],\delta')-\eta(\delta,[E,\delta'])&=(2-d)\eta(\delta,\delta') \\
+\left[E,\delta\circ\delta'\right]-\left[E,\delta\right]\circ\delta'-\delta\circ\left[E,\delta'\right]&=\delta\circ\delta'
+\end{align}
+が成り立つ．
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Frobenius 構造$(\eta, \circ , e,E)$が与えられた複素多様体$M$のことを{\bf Frobenius 多様体}(Frobenius manifold)とよぶ．
+\end{defn}
+%修正%消す？%
+\begin{exmp}[\cite{st:1}]
+\label{exmp : universal unfolding}
+$f:\CC^{3}\to\CC$をADE型のいずれかの特異点とする．ここでADE型の特異点とは，
+\[
+\begin{array}{cllc}
+ f(x,y,z)=& x^{\mu+1}+yz & h=\mu+1 & \text{$A_{\mu}$型} \\
+ f(x,y,z)=& x^{2}y+y^{\mu-1}+z^{2} & h=2(\mu-1) & \text{$D_{\mu}$型} \\
+ f(x,y,z)=& x^{3}+y^{4}+z^{2} &h=12& \text{$E_{6}$型} \\
+ f(x,y,z)=& x^{3}+xy^{3}+z^{2} &h=18&  \text{$E_{7}$型} \\
+ f(x,y,z)=& x^{3}+y^{5}+z^{2} &h=30& \text{$E_{8}$型}
+\end{array}
+\]
+である（$h$は$f$の``重み付き次数''である）．$S:=\CC^{\mu}$として，{\bf 普遍開折}(universal unfolding) $F:\CC^{3}\times S\to\CC$を，
+\begin{equation}
+{\rm Jac}(f):=\left. \O_{\CC^{3}} \middle/ \left( \dfrac{\p f}{\p x} , \dfrac{\p f}{\p y} , \dfrac{\p f}{\p z} \right) \right.
+\end{equation}
+の基底$1=:\phi_{0}(x,y,z),\dots,\phi_{\mu}(x,y,z)$を用いて
+\begin{equation}
+F(x,y,z;s_{1}\dots,s_{n}):=f(x,y,z)+\sum_{i=1}^{\mu}s_{i}\cdot\phi_{i}(x,y,z)
+\end{equation}
+と定義する．自然な射影$p:\CC^{3}\times S\to S$に対する$F$の相対的臨界点の集合を$\C$であらわすことにする．このとき，$F$のJacobi環${\rm Jac}(F)$を
+\begin{equation}
+{\rm Jac}(F):=p_{*}\O_{\C}=\O_{\CC^{3}\times S} \left/ \left( \dfrac{\p F}{\p x} , \dfrac{\p F}{\p y} , \dfrac{\p F}{\p z} \right) \right.
+\end{equation}
+と定めることにより，$\O_{S}$-同型写像
+\begin{equation}
+\T_{S} ~\cong~ {\rm Jac}(F),\quad \delta \mapsto \widehat{\delta}F|_{\C}
+\end{equation}
+が得られる．ただし，$\widehat{\delta}$は$\delta$を$x,y,z$について線型に拡張し$\T_{\CC^{3}\times S}$の元とみなしたものである．この同型を用いて，$\circ:\T_{S}\times\T_{S}\to\T_{S}$を
+\begin{equation}
+\widehat{(\delta\circ\delta')}F|_{\C}:=\widehat{\delta}F|_{\C}\cdot \widehat{\delta'}F|_{\C}
+\end{equation}
+と定義し，正則ベクトル場$e,E\in\T_{S}$を
+\begin{equation}
+\widehat{e}F|_{\C}=1,\quad\widehat{E}F|_{\C}=F|_{\C}
+\end{equation}
+となるものとして定義する．さらに，$\eta:\T_{S}\times\T_{S}\to\O_{S}$を
+\begin{equation}
+\eta(\delta,\delta'):={\rm Res}_{\CC^{3}\times S/S}\left[
+\begin{array}{c}
+(\widehat{\delta} F \cdot \widehat{\delta'} F) dx\wedge dy \wedge dz \\
+ \dfrac{\p F}{\p x} \dfrac{\p F}{\p y} \dfrac{\p F}{\p z}
+\end{array}
+\right]
+\end{equation}
+とする．
+このとき，$dx\wedge dy \wedge dz$が原始形式となり，$(S,\eta,\circ,e,E)$は階数$\mu$次元$1-\dfrac{2}{h}$のFrobenius多様体となるということが知られている．
+\end{exmp}
+
+
+\subsection{性質}
+
+Frobenius 構造について重要な性質を以下に記す．これらの命題の証明は参考文献\cite{st:1}を参照せよ．
+
+接続$\ns$の水平切断の空間を
+\begin{equation}
+\T_M^f:=\ker\ns=\{\delta\in\T_M~|~\text{ 任意の}\delta'\in\T_M
+\text{ に対して}\ns_{\delta'}\delta=0\text{ となる}\}
+\end{equation}
+とおく．
+\begin{prop}
+\begin{enumerate}
+\item $\T_M^f$は$M$上の階数$\mu $の局所系をなす．つまり，$\T_M^f$は$M$の各店の近傍上で定数層$\CC_M$の直和$\displaystyle\bigoplus_{i=1}^\mu\CC_M$と同型．
+\item $\eta$は自然に$\CC_M$-双線形形式
+\begin{equation}
+\eta:\T_M^f\times\T_M^f\longrightarrow\CC_M
+\end{equation}
+を与える．
+\item $\O_M$-自己準同型$Q\in\End_{\O_M}(\T_M)$を$Q:=\id_{\T_M}-\ns E$により定めるとき，$Q$は自然に$\End_{\CC_M}(\T_M^f)$の元を与える．とくに，$Qe=0$であり，
+\begin{equation}
+\label{eqn : nanmoomoitukann}
+\eta(Q\delta,\delta')+\eta(\delta,Q\delta')=d\cdot\eta(\delta,\delta'),\quad\delta,\delta'\in\T_M^f
+\end{equation}
+が成立する．
+\end{enumerate}
+\end{prop}
+
+\begin{defn}
+\label{defn:flatcoordinate}
+複素多様体$M$の局所座標$(t_1,\dots,t_{\mu})$が以下の条件を満たすとき{\bf 平坦座標}とよばれる：
+\begin{enumerate}
+\item $e=\p_1$．
+\item $\displaystyle\T_M^f=\bigoplus_{i=1}^\mu\CC_M\p_i$．
+\item Eulerベクトル場$E$が
+\begin{equation}
+E=\sum_{i=1}^\mu\left\{ (1-q_i)t^i+c_i\right\}\p_i
+\end{equation}
+で与えられる．ただし，$q_i\not= 1$ならば$c_i=0$である．
+\end{enumerate}
+ただし，$\p_i:=\dfrac{\p}{\p t_i}$をあらわす．
+\end{defn}
+$Q$の定義より，
+\begin{equation}
+\label{eqn : apectrum}
+Q\dfrac{\p}{\p t^{i}}=\dfrac{\p}{\p t^{i}}-\ns_{\frac{\p}{\p t^{i}}}E=\dfrac{\p}{\p t^{i}}-\left[ E,\dfrac{\p}{\p t^{i}} \right]=q_{i}\dfrac{\p}{\p t^{i}}
+\end{equation}
+である．
+\begin{exmp}
+\label{exmp : Euler vector  field}
+$(M,\eta,\circ,e,E)$を階数$2$次元$d$のFrobenius多様体とし，$(t^{1},t^{2})$を平坦座標とする．式\eqref{eqn : apectrum}，\ref{eqn : nanmoomoitukann}から，$q_{1}=0,~q_{1}+q_{2}=d$が得られる．従って，このとき，
+\begin{equation}
+\label{eqn : Euler vector field of rank 2 Frobenius manifold}
+E=t^{1}\dfrac{\p}{\p t^{1}}+\left\{ (1-d)+r\right\}\dfrac{\p}{\p t^{2}}
+\end{equation}
+となる．
+\end{exmp}
+
+
+次の命題は 定義\ref{definitionoffrobeniusmanifold} {\rm (iii)}から導かれる．
+
+\begin{prop}
+\label{prop:potential}
+$M$の各点において，局所的に定義される正則函数$\F$で，
+\begin{align}
+&\label{metric nad potential} \eta(\p_i\circ\p_j,\p_k)=\eta(\p_i,\p_j\circ\p_k)=\p_i\p_j\p_k \F
+\quad i,j,k=1,\dots,\mu \\
+& \label{Eulervectorfieldandpotential} E\F=(3-d)\F+(\text{平坦座標の$2$次式})
+\end{align}
+をみたすものが存在する．とくに，
+\begin{equation}
+\eta_{ij}:=\eta(\p_i,\p_j)=\p_1\p_i\p_j \F
+\end{equation}
+が成り立つ．正則函数$\F$は {\bf Frobenius potential}とよばれる．
+\end{prop}
+
+\begin{rem}
+定義\ref{defn:flatcoordinate}，命題\ref{prop:potential}から，平坦座標$(t^{1},\dots,t^{\mu})$とFrobenius potential$\F$が与えられればFrobenius構造が局所的に決定される．しかし，\eqref{Eulervectorfieldandpotential}にあるように，一般にはFrobenius構造からFrobenius potentialは一意には決まらない．
+\end{rem}
+
+積$\circ:\T_{M}\times\T_{M}\to\T_{M}$の結合性は，平坦座標とFrobenius potentialを用いて$3$階の非線形微分方程式に書き換えられる．
+
+\begin{prop}
+$\F$をFrobenius potentialとする．このとき，$i,j,k,\ell \in \{1,\dots, \mu \}$に対して，
+{\bf WDVV方程式}
+\begin{equation}
+\displaystyle \sum_{a ,b=1}^{\mu}\p_{i}\p_{j}\p_{a}\F \cdot \eta^{a b}\cdot \p_{b}\p_{k}\p_{\ell}\F
+=\sum_{a ,b=1}^{\mu}\p_{i}\p_{k}\p_{a}\F \cdot \eta^{a b}\cdot \p_{b}\p_{j}\p_{\ell}\F
+\end{equation}
+が成立する．ここで，$(\eta^{ab}):=(\eta_{ab})^{-1}$とする．
+\end{prop}
+
+\begin{exmp}[{\cite[Example 1.1]{d:1}}]
+\label{classificationofFrobmfdofrank2}
+階数$2$次元$d$のFrobenius多様体のFrobenius potentialは次のように分類される．
+\begin{align}
+\label{Frobeniuspotentialofgeneraltype} \F(t^1,t^2)&= \frac{1}{2}\eta_{12}(t^1)^2t^2+c(t^2)^{\frac{3-d}{1-d}},\quad d\not= -1,1,3  \\
+\F(t^1,t^2)&= \frac{1}{2}\eta_{12}(t^1)^2t^2+c(t^2)^2 \log t^2,\quad d=-1  \\
+\F(t^1,t^2)&= \frac{1}{2}\eta_{12}(t^1)^2t^2+c\log t^2 ,\quad d=3 \\
+\F(t^1,t^2)&= \frac{1}{2}\eta_{12}(t^1)^2t^2+c\exp \left( \dfrac{2}{r}t^2\right) ,\quad d=1 ,~r\not= 0  \\
+\F(t^1,t^2)&= \frac{1}{2}\eta_{12}(t^1)^2t^2,\quad d=1,~r=0
+\end{align}
+ここで，$(t^1,t^2)$は平坦座標であり，$\eta_{12}\in\CC\backslash\{ 0 \}, ~ c\in\CC$である．(1.1.27)のような項が主結果で計算したものの中にもあらわれる．
+\end{exmp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{主結果}
+
+\section{主結果における準備}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{有理関数 $F$ の定義}
+	$\mu$は$4$以上の整数とする．次元$\mu$の複素多様体$M:=(\CC\times\CC^*)\times(\CC^*)^{2}\times\CC^{\mu-4}$を考え，$M$の座標系を$(s_1,s_2,\cdots,s_\mu)$とする．このとき，$\PP^1$上の有理関数$F$で，$\infty, \ 0$で位数$1$の極，$e^{s_3}$で位数$\mu-3$の極を持つようなものを考える．具体的には，$F$を次で定義する：
+\begin{align}
+F(z;s_1,s_2,\cdots,s_\mu) := z + s_1 +\frac{e^{s_2}}{z} + \sum_{i=1}^{\mu-3}\frac{ze^{(i-1)s_3}s_{i+3}s_{\mu}^{i-1}}{(z-e^{s_3})^i}. \label{eq:F}
+\end{align}
+
+
+\subsection{積構造$\circ$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	$\mathfrak{X}:=\PP^1\times M \setminus {F^{-1}(\infty)}$と定義する．自然な射影$p : \mathfrak{X} \rightarrow M$に対する$F$の相対的臨界点の集合を$\C$で表し，$F$のJacobi環$\mathrm{Jac}(F)$を
+\begin{align}
+	\mathrm{Jac}(F) := p_*\O_\C = p_*\O_\mathfrak{X} \left/ \left(\frac{\partial F}{\partial z}\right) \right.
+\end{align}
+と定める．このとき，$\O_M$同型写像
+\begin{align}
+	\T_M \simeq \mathrm{Jac}(F), \ \delta \mapsto \widehat{\delta} F|_\C
+\end{align}
+が得られる．ただし，$\widehat{\delta}$は$\delta$を$z$について線形に拡張し$\T_\mathfrak{X}$の元とみなしたものである．この同型を用いて，積$\circ : \T_M\times\T_M\rightarrow\T_M$を
+\begin{align}
+\widehat{(\delta\circ\delta')}F|_{\C}:=\widehat{\delta}F|_{\C}\cdot \widehat{\delta'}F|_{\C}
+\end{align}
+と定義する．この積は明らかに結合的である．
+
+\subsection{単位ベクトル場 $\bm{e}$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	正則ベクトル場$\bm{e}\in \T_M$を$\widehat{\bm{e}}F|_\C = 1$となるものとして定義すると，これは積$\circ$に関する単位元である．
+
+\subsection{Eulerベクトル場 $E$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	正則ベクトル場$E \in \T_M$を$\widehat{E}F|_\C = F|_\C$となるものとして定義する．これをEulerベクトル場と呼ぶ．具体的には，
+$$E=s_1\dfrac{\partial}{\partial s_1}+2\dfrac{\partial}{\partial s_2}+\dfrac{\partial}{\partial s_3}+\sum_{k=1}^{\mu-3}\dfrac{(\mu-2-k)}{\mu-3}s_{k+3}\dfrac{\partial}{\partial s_{k+3}}$$
+となる．
+
+
+\subsection{原始形式}
+	事実として，$\dfrac{dz}{z}$が原始形式を定めることが知られている（\cite{d:1, mil}の帰結である）．とくに．次元$1$で階数$\mu$のFrobenius構造が$M$に入ることがわかる．
+
+\subsection{非退化対称$\O_M$双線形形式$\eta$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	$M$上の対称$\O_M$双線形形式$\eta : \T_M\times\T_M\rightarrow\O_M$を
+	$$\eta(\partial_{s_i},\partial_{s_j})=\dfrac{1}{2\pi\sqrt{-1}}\int_{\left|\frac{\partial F}{\partial z}\right|=\epsilon}\dfrac{\partial_{s_i}F\cdot\partial_{s_j}F}{z\partial_zF}\cdot\dfrac{dz}{z}$$
+	と定義すると非退化となることが知られている．座標系が平坦であるとき，$\eta_{ij}$とあらわす．
+
+\begin{rem}
+	非退化対称$\O_M$双線形形式$\eta$は，原始形式の$2$乗$\left(\dfrac{dz}{z}\right)^2$に依存する．$\Jac(F)$は$\dfrac{dz}{z}$によって$\Omega_F := p_*\Omega_{\mathfrak{X} / M}^1/dF$と同型となる．$\eta$は$\Omega_F$上に定まる自然な非退化$\O_M$-双線形形式を原始形式で$\T_M$上に運んだものである．
+	\end{rem}
+
+\subsection{Frobenius potential $\F$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	$F$における留数，
+\begin{align}
+\eta(\partial_{s_i},\partial_{s_j})=\dfrac{1}{2\pi\sqrt{-1}}\int_{\left|\frac{\partial F}{\partial z}\right|=\epsilon}\dfrac{\partial_{s_i}F\cdot\partial_{s_j}F}{z\partial_zF}\cdot\dfrac{dz}{z}
+\end{align}
+を考える．\cite[Lemma 4.3]{sat}を参考にすると平坦座標について次のことが言える．
+
+\begin{lem}\label{flat}\rm
+	座標系$\bm{s}=(s_1, s_2, \cdots, s_\mu)$を用いて
+\begin{align}t_1:=s_1, \ t_2:=s_2, \ t_3:=s_3, \ t_4:=s_4, \ t_\mu:=s_\mu, \\ t_i=q_i(s_i,s_{i+1},\cdots,s_\mu)かつ\left.\dfrac{\p t_i}{\p s_j}\right|_{s_5=\cdots=s_{i-1}=s_{i+1}=\cdots=s_{\mu-1}=0}=\delta_j^i \notag \end{align}
+と表されるような平坦座標系$\bm{t}=(t_1, t_2, \cdots, t_\mu)$がとれる．ただし，$i=5,6,\cdots,\mu-1$であり，$q_i \in \QQ[t_\mu, t_\mu^{-1}][t_i, \cdots, t_{\mu-1}]$である．また，$\delta_j^i$はKronecker deltaである．
+\end{lem}
+
+\begin{defn} 等式
+\begin{align}
+\dfrac{\partial^3\F}{\partial t_i\partial t_j\partial t_k}
+= \eta(\partial_{t_i}\circ\partial_{t_j},\partial_{t_k})=\dfrac{1}{2\pi\sqrt{-1}}\int_{\left|\frac{\partial F}{\partial z}\right|=\epsilon}\dfrac{\partial_{t_i}F\cdot\partial_{t_j}F\cdot\partial_{t_k}F}{z\partial_zF}\cdot\dfrac{dz}{z}
+\end{align}
+が成立する正則関数$\F$を組$\left(F,\dfrac{dz}{z}\right)$に対するFrobenius potentialという．
+\end{defn}
+\noindent 今後簡単のため，$\dfrac{\partial^3\F}{\partial t_i\partial t_j\partial t_k}
+= \eta(\partial_{t_i}\circ\partial_{t_j},\partial_{t_k})$を$c_{ijk}$と書く．
+
+\section{$\mu=4$のとき}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}
+複素多様体$M:=\CC\times(\CC^*)^3$を考え，$M$の座標系を$(s_1,s_2,s_3,s_4)$とする．そして，$\PP^1$上の有理型関数$F$を次で定義する：
+\begin{align}F(z;s_1,s_2,s_3,s_4)=z+\dfrac{e^{s_2}}{z}+\dfrac{zs_4}{z-e^{s_3}}+s_1.\end{align}
+このとき，$(s_1,s_2,s_3,s_4)$は平坦座標系である．
+\end{lem}
+
+\begin{proof}
+$\eta$を直接計算する．
+\begin{align}
+(\eta(\partial_{s_i},\partial_{s_j}))=
+\begin{pmatrix}
+0&1&0&0\\
+1&0&0&0\\
+0&0&0&1\\
+0&0&1&0
+\end{pmatrix}
+\end{align}
+となるので，座標系$\{s_i\}_i$は平坦である．
+\end{proof}
+
+\noindent 以降，$t_1:=s_1$，$t_2:=s_2$，$t_3:=s_3$，$t_4:=s_4$とおく．もちろん$(t_1,t_2,t_3,t_4)$は平坦座標系である．
+
+\begin{thm}\rm
+$M:=\CC\times(\CC^*)^3$上の\rm{Frobenius構造}$(\circ, \ e=\partial_{t_1}, \ E=t_1\partial_{t_1}+2\partial_{t_2}+\partial_{t_3}+t_4\partial_{t_4},\ \eta)$で組$\left(F,\dfrac{dz}{z}\right)$に対するFrobenius potentialは以下のように与えられる．
+\begin{align}
+	\F(t_1,t_2,t_3,t_4)=\frac{1}{2}t_1^2t_2+t_1t_3t_4+\frac{1}{2}t_3t_4^2+e^{t_2}-t_4e^{t_2-t_3}+t_4e^{t_3}+\frac{1}{2}t_4^2\log{t_4}.
+\end{align}
+\end{thm} 
+
+\begin{proof}%書き方%要%検討%
+次のように計算できる．ただし，条件$c_{ijk}$からFrobenius potentialに$A$という項が含まれることが分かったとき，$(i,j,k);A$と表すことにする．\\
+$(1,1,2) ; \dfrac{1}{2}t_1^2t_2, (1,3,4) ; t_1t_3t_4, (2,2,2);e^{t_2}-t_4e^{t_2-t_3}, (3,3,3) ; t_4e^{t_3}, (3,4,4) ; \dfrac{1}{2}t_3t_4^2, (4,4,4) ; \dfrac{1}{2}t_4^2\log{t_4}$ \\
+したがって，Frobenius potentalは上のようになる．
+\end{proof}
+
+実際，ここで求めたFrobenius potential $\F$がWDVV方程式を満たすことを，Mathematicaで計算することで確認できた．
+
+%加筆%補足としてz+1/z
+\begin{comp}[\cite{tak:1}]\rm
+	$F=z+\dfrac{e^{s_2}}{z}+s_1$を考える．このとき，同じ$\eta$で次のように計算される．
+\begin{align*}
+	(\eta_{ij})=
+	\begin{pmatrix}
+	0 & 1 \\
+	1 & 0
+	\end{pmatrix}.
+\end{align*}
+よって$s_1, s_2$は平坦座標系をなす．同じように$t_1, t_2$と置き換えて，Frobenius potentialを計算すると，
+\begin{align*}
+	\F=\dfrac{1}{2}t_1^2t_2+e^{t_2}
+\end{align*}
+を得る．これらは$\mu=4$のときの$t_3, t_4$を無視したものと完全に一致する．
+\end{comp}
+
+\section{$\mu=5$のとき}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}
+複素多様体$M:=\CC^2\times(\CC^*)^3$を考え，$M$の座標系を$(s_1,s_2,s_3,s_4,s_5)$とする．そして，$\PP^1$上の有理型関数$F$を次で定義する：
+\begin{align}F(z;s_1,s_2,s_3,s_4,s_5)=z+\dfrac{e^{s_2}}{z}+\dfrac{zs_4}{z-e^{s_3}}+\dfrac{ze^{s_3}s_5^2}{(z-e^{s_3})^2}+s_1.\end{align}
+このとき，$(s_1,s_2,s_3,s_4,s_5)$は平坦座標系である．
+\end{lem}
+\begin{proof}
+$\eta$を直接計算する．
+\begin{align}
+(\eta(\partial_{s_i},\partial_{s_j}))=
+\begin{pmatrix}
+0&1&0&0&0\\
+1&0&0&0&0\\
+0&0&0&1&0\\
+0&0&1&0&0\\
+0&0&0&0&1
+\end{pmatrix}
+\end{align}
+となるので，座標系$\{s_i\}_i$は平坦である．
+\end{proof}
+\noindent$\mu=4$のときと同様に，$(s_1,s_2,s_3,s_4,s_5)$を$(t_1,t_2,t_3,t_4,t_5)$と置き換える．
+
+\begin{thm}
+$M:=\CC^2\times(\CC^*)^3$上の\rm{Frobenius構造}$(\circ,e=\partial_{t_1},E=t_1\partial_{t_1}+2\partial_{t_2}+\partial_{t_3}+t_4\partial_{t_4}+\dfrac{1}{2}t_5\partial_{t_5},\eta)$で組$\left(F,\dfrac{dz}{z}\right)$に対するFrobenius potentialは以下のように与えられる．
+\begin{align}
+	\F(t_1,t_2,t_3,t_4,t_5)=&\frac{1}{2}t_1^2t_2+t_1t_3t_4+t_1t_5^2+\frac{1}{2}t_3t_4^2+\dfrac{1}{2}t_4t_5^2-\dfrac{1}{24}t_5^4+e^{t_2}-t_4e^{t_2-t_3}+t_5^2e^{t_2-t_3} \notag \\ 
+&+t_4e^{t_3}+t_5^2e^{t_3}+\frac{1}{2}t_4^2\log{t_5}.
+\end{align}
+\end{thm}
+
+\begin{proof}
+次のように計算できる． 
+\begin{align}
+&(1,1,2) ; \dfrac{1}{2}t_1^2t_2, \ (1,3,4) ; t_1t_3t_4, \ (1,5,5) ; t_1t_5^2, \ (2,2,2);e^{t_2}-t_4e^{t_2-t_3}+t_5^2e^{t_2-t_3}, \ (3,3,3) ; t_4e^{t_3}+t_5^2e^{t_3}, \notag \\
+&(3,4,4) ; \dfrac{1}{2}t_3t_4^2, \ (4,4,5) ; \dfrac{1}{2}t_4^2\log{t_5}, \ (4,5,5) ; \dfrac{1}{2}t_4t_5^2, \ (5,5,5) ; -\dfrac{1}{24}t_5^4 \notag
+\end{align}
+したがって，Frobenius potentalは上のようになる．
+\end{proof}
+
+%追記%
+実際，ここで求めたFrobenius potential $\F$がWDVV方程式を満たすことを，Mathematicaで計算することで確認できた．
+
+\section{$\mu=6$のとき}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}
+複素多様体$M:=\CC^3\times(\CC^*)^3$を考え，$M$の座標系を$(s_1,s_2,s_3,s_4,s_5,s_6)$とする．そして，$\PP^1$上の有理型関数$F$を次で定義する：
+\begin{align}F(z;s_1,s_2,s_3,s_4,s_5,s_6)=z+\dfrac{e^{s_2}}{z}+\dfrac{zs_4}{z-e^{s_3}}+\dfrac{ze^{s_3}s_5s_6}{(z-e^{s_3})^2}+\dfrac{ze^{2s_3}s_6^3}{(z-e^{s_3})^3}+s_1.\end{align}
+このとき，$t_1=s_1, \ t_2=s_2, \ t_3=s_3, \ t_4=s_4, \ t_5=s_5-\dfrac{1}{2}s_6^2, \ t_6=s_6$とおくと，$(t_1,t_2,t_3,t_4,t_5,t_6)$は平坦座標となる．
+\end{lem}
+\begin{proof}
+座標系が$(s_1,s_2,s_3,s_4,s_5,s_6)$であるとき，$\eta$を直接計算すると
+\begin{align}
+(\eta(\partial_{s_i},\partial_{s_j}))=
+\begin{pmatrix}
+0&1&0&0&0&0\\
+1&0&0&0&0&0\\
+0&0&0&1&0&0\\
+0&0&1&0&0&0\\
+0&0&0&0&0&1\\
+0&0&0&0&1&-2s_6
+\end{pmatrix}
+\end{align}
+となるので，座標系$\{s_i\}_i$は平坦でない．
+ここで，$s_5s_6$は$t_5, \ t_6$の多項式で次数が$1$になるようなものである．$s_5s_6=t_5t_6+at_6^3, \ (a \in \CC)$とすると，$(6,6)$成分は$2(1-2a)t_6$となる．この成分が恒等的に$0$になるように$a=\dfrac{1}{2}$と定めると上の座標変換を得る．この座標変換で有理型関数$F$を書き直すと次のようになる : 
+\begin{align}
+F(z;t_1,t_2,t_3,t_4,t_5,t_6)=z+\dfrac{e^{t_2}}{z}+\dfrac{zt_4}{z-e^{t_3}}+\dfrac{ze^{t_3}(t_5t_6+\frac{1}{2}t_6^3)}{(z-e^{t_3})^2}+\dfrac{ze^{2t_3}t_6^3}{(z-e^{t_3})^3}+t_1.
+\end{align}
+この$F$のもとで$\eta$を計算すると，
+\begin{align}
+(\eta_{ij})=
+\begin{pmatrix}
+0&1&0&0&0&0\\
+1&0&0&0&0&0\\
+0&0&0&1&0&0\\
+0&0&1&0&0&0\\
+0&0&0&0&0&1\\
+0&0&0&0&1&0
+\end{pmatrix}
+\end{align}
+となる．よって，座標系$\{t_i\}_i$は平坦である．
+\end{proof}
+
+\begin{thm}
+$M:=\CC^3\times(\CC^*)^3$上の\rm{Frobenius構造}$(\circ,e=\partial_{t_1},E=t_1\partial_{t_1}+2\partial_{t_2}+\partial_{t_3}+t_4\partial_{t_4}+\dfrac{2}{3}t_5\partial_{t_5}+\dfrac{1}{3}t_6\partial_{t_6},\eta)$で組$\left(F,\dfrac{dz}{z}\right)$に対するFrobenius potentialは以下のように与えられる．
+\begin{align}
+	&\F(t_1,t_2,t_3,t_4,t_5,t_6) \notag \\
+&=\frac{1}{2}t_1^2t_2+t_1t_3t_4+t_1t_5t_6+\frac{1}{2}t_3t_4^2 +\dfrac{1}{6}\frac{t_4t_5^2}{t_6} + \dfrac{1}{2}t_4t_5t_6 + \frac{1}{24}t_4t_6^3 -\frac{1}{108}\frac{t_5^4}{t_6^2} \notag \\
+&-\frac{1}{24}t_5^2t_6^2-\frac{1}{960}t_6^6 +\dfrac{1}{2}t_4^2\log{t_6}+e^{t_2}-e^{t_2-t_3}\left(t_4-t_5t_6+\dfrac{1}{2}t_6^3\right) \notag \\
+&+e^{t_3}\left(t_4+t_5t_6+\dfrac{1}{2}t_6^3\right).
+\end{align}
+\end{thm}
+
+\begin{proof}
+次のように計算できる． 
+\begin{align}
+&(1,1,2) ; \dfrac{1}{2}t_1^2t_2, \ (1,3,4) ; t_1t_3t_4, \ (1,5,6) ; t_1t_5t_6, (2,2,2);e^{t_2}-t_4e^{t_2-t_3}+t_5t_6e^{t_2-t_3}-\dfrac{1}{2}t_6^3e^{t_2-t_3}, \notag \\
+&(3,3,3) ; t_4e^{t_3}+t_5t_6e^{t_3}+\dfrac{1}{2}t_6^3e^{t_3}, \ (3,4,4) ; \dfrac{1}{2}t_3t_4^2, \ (4,4,6) ; \dfrac{1}{2}t_4^2\log{t_6}, \ (4,5,5) ; \dfrac{1}{6}\frac{t_4t_5^2}{t_6}, \ \notag \\
+&(4,5,6) ; \dfrac{1}{2}t_4t_5t_6, \ (4,6,6,) ; \frac{1}{24}t_4t_6^3, \ (5,6,6) ; -\frac{1}{108}\frac{t_5^4}{t_6^2}-\frac{1}{24}t_5^2t_6^2, \ (6,6,6) ; -\frac{1}{960}t_6^6 \notag
+\end{align}
+したがって，Frobenius potentalは上のようになる．
+\end{proof}
+
+%追記%
+実際，ここで求めたFrobenius potential $\F$がWDVV方程式を満たすことを，Mathematicaで計算することで確認できた．
+
+\section{$\mu=7$のとき}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}
+複素多様体$M:=\CC^4\times(\CC^*)^3$を考え，$M$の座標系を$(s_1,s_2,s_3,s_4,s_5,s_6,s_7)$とする．そして，$\PP^1$上の有理型関数$F$を次で定義する：
+\begin{align}F(z;s_1,s_2,s_3,s_4,s_5,s_6,s_7)=z+\dfrac{e^{s_2}}{z}+\dfrac{zs_4}{z-e^{s_3}}+\dfrac{ze^{s_3}s_5s_7}{(z-e^{s_3})^2}+\dfrac{ze^{2s_3}s_6s_7^2}{(z-e^{s_3})^3}+\dfrac{ze^{3s_3}s_7^4}{(z-e^{s_3})^4}+s_1.\end{align}
+このとき，$t_1=s_1, \ t_2=s_2, \ t_3=s_3, \ t_4=s_4, \ t_5=s_5+\dfrac{s_6^2}{8s_7}+\dfrac{1}{2}s_6s_7+\dfrac{1}{6}s_7^3, \ t_6=s_6-s_7^2, \ t_7=s_7$とおくと，$(t_1,t_2,t_3,t_4,t_5,t_6,t_7)$は平坦座標となる．
+\end{lem}
+\begin{proof}
+座標系が$(s_1,s_2,s_3,s_4,s_5,s_6,s_7)$であるとき，$\eta$を直接計算すると
+\begin{align}
+(\eta(\partial_{s_i},\partial_{s_j}))=
+\begin{pmatrix}
+0&1&0&0&0&0&0\\
+1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0\\
+0&0&1&0&0&0&0\\
+0&0&0&0&0&0&1\\
+0&0&0&0&0&\dfrac{1}{4}&-\dfrac{s_6+3s_7^2}{4s_7}\\
+0&0&0&0&1&-\dfrac{s_6+3s_7^2}{4s_7}&-\dfrac{-s_6^2+2s_6s_7^2-9s_7^4}{4s_7^2}
+\end{pmatrix}
+\end{align}
+となるので，座標系$\{s_i\}_i$は平坦でない．ここで，$s_6s_7^2$は$t_6, \ t_7$の多項式で次数が$1$になるようなもの，$s_5s_7$は$t_5, \ t_6, \ t_7$の多項式で次数が$1$になるようなものである．$s_6s_7^2=t_6t_7^2 + c_1t_7^4, \ s_5s_7=t_5t_7 + c_2t_6t_7 +c_3t_6^2 + c_4t_7^4\ (c_i \in \CC, i=1,2,\cdots, 4)$とすると，$(6,7), \ (7,7)$成分はそれぞれ次のようになる．
+\begin{align}
+&(6,7) ; -\frac{(1-8c_3)t_6 + (3-c_1-4c_2)t_7^2}{4t_7}, \notag \\
+&(7,7) ; -\frac{(-1+8c_3)t_6^2 + 2(1+c_1-4c_2)t_6t_7^2-(9-14c_1+c_1^2+24c_4)}{4t_7^2}. \notag
+\end{align}
+上の成分がすべて恒等的に$0$になるようにしたいので，次の方程式系を得る．
+\begin{equation}
+\left\{ \,
+\begin{aligned}
+	&1-8c_3=0 \\
+	&3-c_1-4c_2=0 \\
+	&1+c_1-4c_2=0 \\
+	&9-14c_1+c_1^2+24c_4=0
+\end{aligned}\notag
+\right.
+\end{equation}
+この方程式系を解くと，$c_1=1,\ c_2=\dfrac{1}{2},\ c_3=\dfrac{1}{8}, \ c_4=\dfrac{1}{6}$となり，上の座標変換を得る．この座標変換で有理型関数$F$を書き直すと次のようになる : 
+\begin{align}
+F(z;t_1,t_2,t_3,t_4,t_5,t_6,t_7)=&z+\dfrac{e^{t_2}}{z}+\dfrac{zt_4}{z-e^{t_3}}+\dfrac{ze^{t_3}(t_5t_7+\frac{1}{8}t_6^2+\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4)}{(z-e^{t_3})^2} \notag \\
+&+\dfrac{ze^{2t_3}(t_6t_7^2+t_7^4)}{(z-e^{t_3})^3}+\dfrac{ze^{3t_3}t_7^4}{(z-e^{t_3})^4}+t_1.
+\end{align}
+この$F$のもとで$\eta$を計算すると，
+\begin{align}
+(\eta_{ij})=
+\begin{pmatrix}
+0&1&0&0&0&0&0\\
+1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0\\
+0&0&1&0&0&0&0\\
+0&0&0&0&0&0&1\\
+0&0&0&0&0&\dfrac{1}{4}&0\\
+0&0&0&0&1&0&0
+\end{pmatrix}
+\end{align}
+となる．よって，座標系$\{t_i\}_i$は平坦である．
+\end{proof}
+
+\begin{thm}\label{mu5pot}
+$M:=\CC^4\times(\CC^*)^3$上の\rm{Frobenius構造}$(\circ, \ e=\partial_{t_1}, \ E=t_1\partial_{t_1}+2\partial_{t_2}+\partial_{t_3}+t_4\partial_{t_4}+\dfrac{3}{4}t_5\partial_{t_5}+\dfrac{2}{4}t_6\partial_{t_6}+\dfrac{1}{4}t_7\partial_{t_7}, \ \eta)$で組$\left(F,\dfrac{dz}{z}\right)$に対するFrobenius potentialは以下のように与えられる．
+\begin{align}
+	\F(t_1,t_2,t_3,t_4,t_5,t_6,t_7)&=\frac{1}{2}t_1^2t_2 +t_1t_3t_4 +t_1t_5t_7 +\frac{1}{8}t_1t_6^2 +e^{t_2}+\dfrac{1}{2}t_4^2\log{t_7} \notag \\
+&+\dfrac{1}{2}t_3t_4^2+\frac{1}{16}t_4t_6^2-\dfrac{1}{96}\frac{t_4t_6^3}{t_7^2}+\dfrac{1}{24}t_4t_6t_7^2 +\frac{1}{24}\frac{t_5^3}{t_7} -\frac{1}{32}\frac{t_5^2t_6^2}{t_7^2}-\frac{1}{24}t_5^2t_7^2 \notag \\
+&+\frac{1}{256}\frac{t_5t_6^4}{t_7^3}-\frac{1}{96}t_5t_6^2t_7 +\frac{1}{720}t_5t_7^5 -\frac{1}{1536}t_6^4-\frac{1}{6144}\frac{t_6^6}{t_7^4} -\frac{1}{1152}t_6^2t_7^4  \notag \\
+&-\frac{1}{18144}t_7^8+e^{t_2-t_3}\left(-t_4+\frac{1}{8}t_6^2+t_5t_7-\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4 \right) \notag \\
+&+e^{t_3}\left(t_4+\frac{1}{8}t_6^2+t_5t_7+\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4 \right).
+\end{align}
+\end{thm}
+
+\begin{proof}
+次のように計算できる． 
+\begin{align}
+&(1,1,2) ; \dfrac{1}{2}t_1^2t_2, \ (1,3,4) ; t_1t_3t_4, \ (1,5,7) ; t_1t_5t_7, \ (1,6,6) ; \frac{1}{8}t_1t_6^2, \notag \\
+&(2,2,2);e^{t_2}+e^{t_2-t_3}\left(-t_4+\frac{1}{8}t_6^2+t_5t_7-\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4 \right), 
+(3,3,3) ; e^{t_3}\left(t_4+\frac{1}{8}t_6^2+t_5t_7+\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4 \right), \notag \\
+&(3,4,4) ; \dfrac{1}{2}t_3t_4^2, (4,4,7) ; \dfrac{1}{2}t_4^2\log{t_7}, \ (4,6,6) ; \frac{1}{16}t_4t_6^2-\dfrac{1}{96}\frac{t_4t_6^3}{t_7^2}, \ (4,6,7) ; \dfrac{1}{24}t_4t_6t_7^2, \ (5,5,5) ; \frac{1}{24}\frac{t_5^3}{t_7}, \notag \\
+&(5,5,7) ; -\frac{1}{32}\frac{t_5^2t_6^2}{t_7^2}-\frac{1}{24}t_5^2t_7^2, 
+\ (5,6,6) ; \frac{1}{256}\frac{t_5t_6^4}{t_7^3}-\frac{1}{96}t_5t_6^2t_7, 
+\ (5,7,7) ; \frac{1}{720}t_5t_7^5, 
+\ (6,6,6) ; -\frac{1}{1536}t_6^4-\frac{1}{6144}\frac{t_6^6}{t_7^4},  \notag\\
+&(6,6,7) ; -\frac{1}{1152}t_6^2t_7^4, \ (7,7,7) ; -\frac{1}{18144}t_7^8. \notag
+\end{align}
+したがって，Frobenius potentalは上のようになる．
+\end{proof}
+
+%追記%
+実際，ここで求めたFrobenius potential $\F$がWDVV方程式を満たすことを，Mathematicaで計算することで確認できた．
+
+\section{$\mu=8$のとき}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{flat8}
+複素多様体$M:=\CC^5\times(\CC^*)^3$を考え，$M$の座標系を$\bm{s}=(s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_8)$とする．そして，$\PP^1$上の有理型関数$F$を次で定義する：
+\begin{align}F(z;\bm{s})=z+\dfrac{e^{s_2}}{z}+\dfrac{zs_4}{z-e^{s_3}}+\dfrac{ze^{s_3}s_5s_8}{(z-e^{s_3})^2}+\dfrac{ze^{2s_3}s_6s_8^2}{(z-e^{s_3})^3}+\dfrac{ze^{3s_3}s_7s_8^3}{(z-e^{s_3})^4}+\dfrac{ze^{4s_3}s_8^5}{(z-e^{s_3})^5}+s_1.\end{align}
+このとき，$t_1:=s_1, \ t_2:=s_2, \ t_3:=s_3, \ t_4:=s_4, \ t_5:=s_5+\dfrac{17}{10}s_7^2+\dfrac{s_7^3}{5s_8^2}-\dfrac{s_6s_7}{s_8}+s_6s_8-\dfrac{49}{20}s_7s_8^2+\dfrac{17}{30}s_8^4$，$t_6:=s_6-\dfrac{s_7^2}{5s_8}-\dfrac{2}{5}s_7s_8+\dfrac{7}{12}s_8^3, \ t_7:=s_7-\dfrac{3}{2}t_8^2, \ t_8=s_8$とおくと，$\bm{t} =(t_1,t_2,t_3,t_4,t_5,t_6,t_7,t_8)$は平坦座標となる．
+\end{lem}
+\begin{proof}
+座標系が$\bm{s}$であるとき，$\eta$を直接計算すると
+\begin{align}
+&(\eta(\partial_{s_i},\partial_{s_j}))= \notag \\
+&\begin{pmatrix}
+0&1&0&0&0&0&0&0\\
+1&0&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0\\
+0&0&1&0&0&0&0&0\\
+0&0&0&0&0&0&0&1\\
+0&0&0&0&0&0&\frac{1}{5}&-\frac{s_7+4s_8^2}{5s_8}\\
+0&0&0&0&0&\frac{1}{5}&-\frac{4s_7+4s_8^2}{25s_8}&-\frac{-4s_7^2+5s_6s_8-5s_7s_8^2-16s_8^4+4s_8^2}{25s_8^2}\\
+0&0&0&0&1&-\frac{s_7+4s_8^2}{5s_8}&-\frac{-4s_7^2+5s_6s_8-5s_7s_8^2-16s_8^4+4s_8^2}{25s_8^2}&-\frac{2(2s_7^3-5s_6s_7s_8+3s_7^2s_8^2+5s_6s_8^3-12s_7s_8^4+32s_8^6)}{25s_8^3}
+\end{pmatrix}
+\end{align}
+となるので，座標系$\bm{s}$は平坦でない．ここで，$s_7s_8$は$t_7, \ t_8$の多項式で次数が$1$になるようなもの，$s_6s_8^2$は$t_6, \ t_7, \ t_8$の多項式で次数が$1$になるようなもの，$s_5s_8^3$は$t_5, \ t_6, \ t_7, \ t_8$の多項式で次数が$1$になるようなものである．$s_7s_8^3=t_7t_8^3+c_1t_8^5, \ s_6s_8^2=t_6t_8^2 + c_2t_7^2t_8 +c_3t_7t_8^3 + c_4t_8^5, \ s_5s_8=t_5t_8+c_5t_6t_7+c_6t_6t_8^2+c_7t_7^2t_8+c_8t_7t_8^3+c_9t_8^5\ (c_i \in \CC, i=1,2,\cdots, 9)$とすると，$(6,8), \ (7,7), \ (7,8), \ (8,8)$成分はそれぞれ次のようになる．
+
+\begin{align}
+&(6,8) ; -\frac{(1-5c_5)t_7+(4-c_1-5c_6)t_8^2}{5t_8}, \notag \\
+&(7,7) ; -\frac{4(1-5c_2)t_7 + 2(2+2c_1-5c_3)t_8^2}{25t_8},  \notag \\
+&(7,8) ; -\frac{1}{25t_8^2}\{-4(1-5c_2)t_7^2+5(1-5c_5)t_6t_8-5(1-8c_2+2c_1c_2-c_3+10c_7)t_7t_8^2 \notag \\ 
+	&\,\,\,\,\,\,\,+(-16+3c_1+4c_1^2+20c_3-5c_1c_3-10c_4-25c_8)t_8^4\},  \notag \\
+&(8,8) ; -\frac{2}{25t_8^3}\{ 2(1-5c_2)t_7^3 +5(-1+5c_5)t_6t_7t_8 +(3-2c_1-15c_2+10c_1c_2)t_7^2t_8^2 \notag \\
+	&\,\,\,\,\,\,\, +5(1+c_1-5c_6)t_6t_8^3 +(-12-4c_1-2c_1^2+25c_3+10c_4-50c_8)t_7t_8^4 \notag \\
+	&\,\,\,\,\,\,\, +(32-44c_1+c_1^2+2c_1^3+65c_4-10c_1c_4-100c_9)t_8^6 \}. \notag
+\end{align}
+
+\noindent 上の成分がすべて恒等的に$0$になるようにしたいので，次の方程式系を得る．
+
+\begin{equation}
+\left\{ \,
+\begin{aligned}
+	&1-5c_5=0 \\
+	&4-c_1-5c_6=0 \\
+	&1-5c_2=0 \\
+	&2+2c_1-5c_3=0 \\
+	&1-8c_2+2c_1c_2-c_3+10c_7=0 \\
+	&-16+3c_1+4c_1^2+20c_3-5c_1c_3-10c_4-25c_8=0 \\
+	&3-2c_1-15c_2+10c_1c_2=0 \\
+	&1+c_1-5c_6=0 \\
+	&-12-4c_1-2c_1^2+25c_3+10c_4-50c_8=0 \\
+	&32-44c_1+c_1^2+2c_1^3+65c_4-10c_1c_4-100c_9=0
+\end{aligned}\notag
+\right.
+\end{equation}
+
+\noindent この方程式系を解くと，$c_1=\dfrac{3}{2},\ c_2=\dfrac{1}{5},\ c_3=1, \ c_4=\dfrac{7}{12}, \ c_5=\dfrac{1}{5}, \ c_6=\dfrac{1}{2},\ c_7\dfrac{1}{10},\ c_8=\dfrac{1}{6},\ c_9=\dfrac{1}{24}$となり，上の座標変換を得る．この座標変換で有理型関数$F$を書き直すと次のようになる : 
+\begin{align}
+F(z;\bm{t})&=z+\dfrac{e^{t_2}}{z}+\dfrac{zt_4}{z-e^{t_3}}+\dfrac{ze^{t_3}(t_5t_8+\frac{1}{5}t_6t_7+\frac{1}{2}t_6t_8^2+\frac{1}{6}t_7t_8^3+\frac{1}{10}t_7^2t_8+\frac{1}{24}t_8^5)}{(z-e^{t_3})^2} \notag \\
+&+\dfrac{ze^{2t_3}(t_6t_8^2+t_7t_8^3+\frac{1}{5}t_7^2t_8+\frac{7}{12}t_8^5)}{(z-e^{t_3})^3}+\dfrac{ze^{3t_3}(t_7t_8^3+\frac{3}{2}t_8^5)}{(z-e^{t_3})^4}
++\dfrac{ze^{4t_3}t_8^5}{(z-e^{t_3})^5}+t_1.
+\end{align}
+この$F$のもとで$\eta$を計算すると，
+
+\begin{align}
+(\eta_{ij})=
+\begin{pmatrix}
+0&1&0&0&0&0&0&0\\
+1&0&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0\\
+0&0&1&0&0&0&0&0\\
+0&0&0&0&0&0&0&1\\
+0&0&0&0&0&0&\dfrac{1}{5}&0\\
+0&0&0&0&0&\dfrac{1}{5}&0&0\\
+0&0&0&0&1&0&0&0
+\end{pmatrix}
+\end{align}
+となる．よって，座標系$\bm{t}$は平坦である．
+\end{proof}
+
+\begin{thm}\label{pot8}
+$M:=\CC^5\times(\CC^*)^3$上の\rm{Frobenius構造}$(\circ, \ e=\partial_{t_1}, \ E=t_1\partial_{t_1}+2\partial_{t_2}+\partial_{t_3}+t_4\partial_{t_4}+\dfrac{4}{5}t_5\partial_{t_5}+\dfrac{3}{5}t_6\partial_{t_6}+\dfrac{2}{5}t_7\partial_{t_7}+\dfrac{1}{5}t_8\partial_{t_8}, \ \eta)$で組$\left(F, \ \dfrac{dz}{z}\right)$に対するFrobenius potentialは以下のように与えられる．
+\begin{align}
+	\F&(\bm{t})=\dfrac{1}{2}t_1^2t_2+t_1t_3t_4+t_1t_5t_7+\frac{1}{5}t_1t_6t_7 \notag \\
+&+\dfrac{1}{2}t_3t_4^2+\frac{1}{5}\frac{t_4t_5t_7}{t_8}+\frac{1}{2}t_4t_5t_8+\frac{1}{10}\frac{t_4t_6^2}{t_8}+\frac{1}{24}t_4t_6t_8^2+\frac{1}{1500}\frac{t_4t_7^4}{t_8^3}+\frac{1}{120}t_4t_7^2t_8-\frac{1}{2880}t_4t_8^5 \notag \\
+&-\frac{1}{50}\frac{t_5^2t_7^2}{t_8^2}+\frac{1}{10}\frac{t_5^2t_6}{t_8}-\frac{1}{24}t_5^2t_8^2+\frac{1}{125}\frac{t_5t_6t_7^3}{t_8^3}-\frac{1}{25}\frac{t_5t_6^2t_7}{t_8^2}-\frac{1}{60}t_5t_6t_7t_8-\frac{1}{3125}\frac{t_5t_7^5}{t_8^4}+\frac{1}{720}t_5t_7t_8^4 \notag \\
+&+\frac{2}{375}\frac{t_6^3t_7^2}{t_8^3}-\frac{1}{200}\frac{t_6^4}{t_8^2}-\frac{1}{600}t_6^2t_7^2-\frac{3}{2500}\frac{t_6^2t_7^4}{t_8^4}-\frac{1}{960}t_6^2t_8^4+\frac{3}{31250}\frac{t_6t_7^6}{t_8^5}-\frac{1}{7200}t_6t_7^2t_8^3 \notag \\
+&+\frac{1}{12096}t_6t_8^7-\frac{1}{375000}\frac{t_7^8}{t_8^6}-\frac{1}{24000}t_7^4t_8^2-\frac{1}{25920}t_7^2t_8^6-\frac{1}{276480}t_8^{10}  \notag \\
+&+e^{t_2-t_3}\left(-t_4+\frac{1}{5}t_6t_7+t_5t_8-\frac{1}{10}t_7^2t_8-\frac{1}{2}t_6t_8^2+\frac{1}{6}t_7t_8^3-\frac{1}{24}t_8^5 \right) \notag \\
+&+e^{t_3}\left(t_4+\frac{1}{5}t_6t_7+t_5t_8+\frac{1}{10}t_7^2t_8+\frac{1}{2}t_6t_8^2+\frac{1}{6}t_7t_8^3+\frac{1}{24}t_8^5 \right) +e^{t_2}+\dfrac{1}{2}t_4^2\log{t_8}.
+\end{align}
+\end{thm}
+
+\begin{proof}
+次のように計算できる． 
+\begin{align*}
+&(1,1,2) ; \dfrac{1}{2}t_1^2t_2, \ (1,3,4) ; t_1t_3t_4, \ (1,5,8) ; t_1t_5t_7, \ (1,6,7) ; \frac{1}{5}t_1t_6t_7, \notag \\
+&(2,2,2);e^{t_2}+e^{t_2-t_3}\left(-t_4+\frac{1}{5}t_6t_7+t_5t_8-\frac{1}{10}t_7^2t_8-\frac{1}{2}t_6t_8^2+\frac{1}{6}t_7t_8^3-\frac{1}{24}t_8^5 \right), \notag \\
+&(3,3,3) ; e^{t_3}\left(t_4+\frac{1}{5}t_6t_7+t_5t_8+\frac{1}{10}t_7^2t_8+\frac{1}{2}t_6t_8^2+\frac{1}{6}t_7t_8^3+\frac{1}{24}t_8^5 \right), \ (3,4,4) ; \dfrac{1}{2}t_3t_4^2, \ \notag \\
+&(4,4,8) ; \dfrac{1}{2}t_4^2\log{t_8}, \ (4,5,8) ; \frac{1}{5}\frac{t_4t_5t_7}{t_8}+\frac{1}{2}t_4t_5t_8, \ (4,6,6) ; \frac{1}{10}\frac{t_4t_6^2}{t_8}, \ (4,6,8) ; \frac{1}{24}t_4t_6t_8^2, \notag \\
+&(4,7,7) ; \frac{1}{1500}\frac{t_4t_7^4}{t_8^3}+\frac{1}{120}t_4t_7^2t_8, \ (4,8,8) ; -\frac{1}{2880}t_4t_8^5, \ (5,5,8) ; -\frac{1}{50}\frac{t_5^2t_7^2}{t_8^2}+\frac{1}{10}\frac{t_5^2t_6}{t_8}-\frac{1}{24}t_5^2t_8^2,  \notag \\
+&(5.6.7) ; \frac{1}{125}\frac{t_5t_6t_7^3}{t_8^3}-\frac{1}{25}\frac{t_5t_6^2t_7}{t_8^2}-\frac{1}{60}t_5t_6t_7t_8, \ (5,7,8) ; -\frac{1}{3125}\frac{t_5t_7^5}{t_8^4}+\frac{1}{720}t_5t_7t_8^4, \ \notag \\
+&(6,6,6) ; \frac{2}{375}\frac{t_6^3t_7^2}{t_8^3}-\frac{1}{200}\frac{t_6^4}{t_8^2}, \ (6,6,7) ; -\frac{1}{600}t_6^2t_7^2-\frac{3}{2500}\frac{t_6^2t_7^4}{t_8^4}, \ (6,6,8) ; -\frac{1}{960}t_6^2t_8^4, \  \notag \\
+ &(6,7,8) ; \frac{3}{31250}\frac{t_6t_7^6}{t_8^5}-\frac{1}{7200}t_6t_7^2t_8^3, (6,8,8) ; \frac{1}{12096}t_6t_8^7,     \notag \\
+&(7,7,8) ; -\frac{1}{375000}\frac{t_7^8}{t_8^6}-\frac{1}{24000}t_7^4t_8^2-\frac{1}{25920}t_7^2t_8^6, \ (8,8,8) ; -\frac{1}{276480}t_8^{10} 
+\end{align*}
+したがって，Frobenius potentalは上のようになる．
+\end{proof}
+
+%追記%
+実際，ここで求めたFrobenius potential $\F$がWDVV方程式を満たすことを，Mathematicaで計算することで確認できた．
+
+\section{一般の階数$\mu$の考察}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	ここまでで$\mu=4,5,6,7,8$の場合に対して，$F$から得られるFrobenius potentialを計算してきた．ここから，実験的結果を観察したときに発見した規則性を一般の階数の場合へ拡張することを試みる．まず，観察して発見した規則性は以下のようなものである．
+\begin{observ}\rm 
+$(2.1.1)$の$F$において組$(F,\dfrac{dz}{z})$に対する$M:=(\CC\times\CC^*)\times(\CC^*)^{2}\times\CC^{\mu-4}$上のFrobenius構造を考える．補題\ref{flat}のように平坦座標系をとったとき，Frobenius potentialは次のようにあらわすことができる．ただし，$f,g \in \QQ[t_4, t_5, \cdots, t_{\mu}]$で，$q_\mu \in \QQ[t_\mu, t_\mu^{-1}][t_3, t_4, \cdots, t_{\mu-1}]$とする．
+\begin{align}
+\F(\bm{t})&=t_1\left(\frac{1}{2}t_2^2+t_3t_4+t_5t_\mu+\frac{1}{2(\mu-3)}\sum_{k=6}^{\mu}t_kt_{\mu-k+5}\right) 
++q(t_3,t_4,\cdots,t_{\mu-1}, t_\mu) \notag \\
+&+e^{t_2-t_3}\cdot f(t_4,t_5,\cdots,t_\mu)  
++e^{t_3}\cdot g(t_4,t_5,\cdots,t_\mu)
++e^{t_2}+\frac{1}{2}t_4^2\log{t_\mu}
+\end{align}
+また，$q,\ f,\ g$について次のことが予想される．
+\begin{enumerate}
+\item[o1.]\label{o1} $f,\ g$の同類項は係数の絶対値が一致する．
+
+\item[o2.]\label{o2} $q$の有理項について$(分子の単項式としての次数)-(分母の単項式としての次数)=2$となる．
+\end{enumerate}
+\end{observ}
+
+	ここで，$\F(\bm{t})$の項$e^{t_2}, \ \dfrac{1}{2}t_4^2\log{t_\mu}$に関しては次のことが言える．
+
+\begin{thm}\rm
+	式$(2.7.1)$における有理式$q$と項$e^{t_2},\dfrac{1}{2}t_4^2\log{t_\mu}$について，以下のことがわかる．
+\begin{enumerate}
+	\item $(2.1.1)$の式から導かれるFrobenius potentialには必ず$e^{t_2}$の項が含まれる．
+
+	\item $(2.1.1)$の式から導かれるFrobenius potentialには必ず$\dfrac{1}{2}t_4^2\log{t_\mu}$の項が含まれる．
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\begin{enumerate}
+	\item\label{p1} 補題\ref{flat}から，$e^{s_3}=s_1=s_4=s_5=\cdots=s_{\mu-1}=0$の制限のもとで，
+\begin{align}
+	\frac{\p F}{\p s_2} = \frac{\p t_2}{\p s_2} \cdot \frac{\p F}{\p t_2} = \frac{\p F}{\p t_2} \notag
+\end{align}
+である．また，$e^{s_3}=s_1=s_4=s_5=\cdots=s_{\mu-1}=0$は$e^{t_3}=t_1=t_4=t_5=\cdots=t_{\mu-1}=0$と言い換えることができる．以上より，$e^{s_3}=s_1=s_4=s_5=\cdots=s_{\mu-1}=0$の制限のもとで，$\eta(\p_{t_2} \circ \p_{t_2}, \p_{t_2})=\eta(\p_{s_2}\circ\p_{s_2}, \p_{s_2})$である．
+\begin{align}
+&\p_{s_2}F|_{e^{s_3}=s_1=s_4=s_5=\cdots=s_{\mu-1}=0}=\dfrac{e^{s_2}}{z}, \notag \\
+&\p_{z}F|_{e^{s_3}=s_1=s_4=s_5=\cdots=s_{\mu-1}=0}=1-\dfrac{e^{s_2}}{z^2}. \notag
+\end{align}
+このとき，$\eta(\p_{s_2}\circ\p_{s_2}, \p_{s_2})$は$e^{s_3}=s_1=s_4=s_5=\cdots=s_{\mu-1}=0$の制限のもとで，次のように計算できる．
+\begin{align}
+	\eta(\p_{s_2}\circ\p_{s_2}&, \p_{s_2}) = \dfrac{1}{2\pi\sqrt{-1}}\int_{\left|\frac{\partial F}{\partial z}\right|=\epsilon}\dfrac{\partial_{s_2}F\cdot\partial_{s_2}F\cdot\partial_{s_2}F}{z\partial_zF}\cdot\dfrac{dz}{z} \notag \\
+&= -\sum_{k=0, \infty}\Res_{z=k} \left(\dfrac{\partial_{s_2}F\cdot\partial_{s_2}F\cdot\partial_{s_2}F}{z\partial_zF}\cdot\dfrac{1}{z}\right) \notag \\
+&= e^{s_2} + 0 \notag 
+= e^{s_2}.
+\end{align}
+よって$\eta(\p_{t_2} \circ \p_{t_2}, \p_{t_2})=\eta(\p_{s_2}\circ\p_{s_2}, \p_{s_2})=e^{s_2}=e^{t_2}$である．$c_{222}$を考えると，$\dfrac{\p \F}{\p t_2\p t_2\p t_2} = e^{t_2}$であるから，$\F$の項に$e^{t_2}$がある．これで示された．
+
+	\item \ref{p1}と同様にして，補題\ref{flat}から，$e^{s_2}=s_1=s_5=s_6=\cdots=s_{\mu-1}=0$の制限の下で，$\eta(\p_{t_4} \circ \p_{t_4}, \p_{t_\mu})=\eta(\p_{s_4}\circ\p_{s_4}, \p_{s_\mu})$である．また，$e^{s_2}=s_1=s_5=s_6=\cdots=s_{\mu-1}=0$は$e^{t_2}=t_1=t_5=t_6=\cdots=t_{\mu-1}=0$と言い換えられる．
+\begin{align}
+&\p_{s_4}F|_{e^{s_2}=s_1=s_5=s_6=\cdots=s_{\mu-1}=0}=\dfrac{z}{z-e^{s_3}}, \notag \\
+&\p_{s_\mu}F|_{e^{s_2}=s_1=s_5=s_6=\cdots=s_{\mu-1}=0}=\dfrac{(\mu-3)ze^{(\mu-4)s_3}s_\mu^{\mu-4}}{(z-e^{s_3})^{\mu-3}}, \notag \\
+&\p_{z}F|_{e^{s_2}=s_1=s_5=s_6=\cdots=s_{\mu-1}=0}=1-\frac{e^{s_3}s_4}{(z-e^{s_3})^2}-\frac{((\mu-2)z+e^{s_3})e^{(\mu-4)s_3}s_\mu^{\mu-3}}{(z-e^{s_3})^{\mu-2}}. \notag
+\end{align}
+このとき，$\eta(\p_{s_4}\circ\p_{s_4}, \p_{s_\mu})$は$e^{s_2}=s_1=s_5=s_6=\cdots=s_{\mu-1}=0$の制限のもとで，次のように計算できる．
+\begin{align}
+	\eta(\p_{s_4}\circ\p_{s_4}&, \p_{s_\mu}) = \dfrac{1}{2\pi\sqrt{-1}}\int_{\left|\frac{\partial F}{\partial z}\right|=\epsilon}\dfrac{\partial_{s_4}F\cdot\partial_{s_4}F\cdot\partial_{s_\mu}F}{z\partial_zF}\cdot\dfrac{dz}{z} \notag \\
+&= -\sum_{k=0, \infty, e^{s_3}}\Res_{z=k} \left(\dfrac{\partial_{s_4}F\cdot\partial_{s_4}F\cdot\partial_{s_\mu}F}{z\partial_zF}\cdot\dfrac{1}{z}\right) \notag \\
+&= 0 + 0 + \frac{1}{s_\mu} \notag 
+= \frac{1}{s_\mu}.
+\end{align}
+よって$\eta(\p_{t_4} \circ \p_{t_4}, \p_{t_\mu})=\eta(\p_{s_4}\circ\p_{s_4}, \p_{s_8})=\dfrac{1}{s_\mu}=\dfrac{1}{t_\mu}$である．$c_{448}$を考えると，$\dfrac{\p \F}{\p t_4\p t_4\p t_\mu} = \dfrac{1}{t_\mu}$であるから，$\F$の項に$\dfrac{1}{2}t_4^2\log{t_\mu}$がある．これで示された．
+\end{enumerate}
+\end{proof}
+
+	o1. に関してもう少し観察すると，次のような性質を発見した．
+\begin{enumerate}
+\item[o1.1.] 符号が異なる項は，多項式として奇数次の項である．
+\end{enumerate}
+
+\noindent o1.1. について，$\mu=8$を例に出すと，符号が異なった項は，$t_4,\ t_7^2t_8,\ t_6t_8^2,\ t_8^5$である．それぞれ，通常の意味で$1$次，$3$次，$3$次，$5$次であり，すべて奇数次である．他の階数でも同様に符号が異なる項はすべて奇数次となっている．
+
+
+\subsection{高野太誠\cite{takano}との比較}
+
+	高野太誠氏の修士論文\cite{takano}での結果と比較してみる．例として，\cite{takano}の$\mu=5$のときの結果と，本論文の$\mu=7$のときの結果（定理\ref{mu5pot}）を比較する．まず，\cite{takano}の$\mu=5$のときに得られたFrobenius potentialは次のようなものである．
+\begin{align}
+	&\F(t_1, t_2, t_3, t_4, t_5) \notag \\
+	&= \dfrac{1}{2}t_1^2t_5+t_1t_2t_4+\dfrac{1}{8}t_1^3+\frac{1}{24}\frac{t_2^3}{t_4}-\frac{1}{32}\frac{t_3^2t_2^2}{t_4^2}+\frac{1}{256}\frac{t_2t_3^4}{t_4^3}-\frac{1}{6144}\frac{t_3^6}{t_4^4} \notag \\
+	&-\frac{1}{24}E_2t_4^2t_2^2-\frac{1}{96}E_2t_2t_3^2t_4+\frac{1}{720}E_4t_2t_4^5-\frac{1}{1536}E_2t_3^4-\frac{1}{1152}E_4t_3^2t_4^4-\frac{1}{18144}E_6t_4^8. \label{eq:takano5}
+\end{align}
+ただし，$E_{2}, E_{4}, E_{6}$は次のように与えられるEisenstein級数である．$\dfrac{z}{2}+\dfrac{z}{e^z-1}=\sum_{k=0}^{\infty}\dfrac{B_{2k}}{(2k)!}z^{2k}$で定義されるベルヌーイ数$B_{2k}$と$q:=e^{2\pi\sqrt{-1}\tau}$，$\sigma_{2k-1}(n):=\sum_{d|n}d^{2k-1}$を用いて，$$E_{2k}(\tau)=1-\dfrac{4k}{B_{2k}}\sum_{n=1}^{\infty}\sigma_{2k-1}(n)q^n$$
+と定義される．次が本論文の$\mu=7$のときに得られたFrobenius potentialである．
+\begin{align}
+	\F(t_1,t_2,t_3,t_4,t_5,t_6,t_7)&=\frac{1}{2}t_1^2t_2 +t_1t_3t_4 +t_1t_5t_7 +\frac{1}{8}t_1t_6^2 +e^{t_2}+\dfrac{1}{2}t_4^2\log{t_7} \notag \\
+&+\dfrac{1}{2}t_3t_4^2+\frac{1}{16}t_4t_6^2-\dfrac{1}{96}\frac{t_4t_6^3}{t_7^2}+\dfrac{1}{24}t_4t_6t_7^2 +\frac{1}{24}\frac{t_5^3}{t_7} -\frac{1}{32}\frac{t_5^2t_6^2}{t_7^2}-\frac{1}{24}t_5^2t_7^2 \notag \\
+&+\frac{1}{256}\frac{t_5t_6^4}{t_7^3}-\frac{1}{96}t_5t_6^2t_7 +\frac{1}{720}t_5t_7^5 -\frac{1}{1536}t_6^4-\frac{1}{6144}\frac{t_6^6}{t_7^4} -\frac{1}{1152}t_6^2t_7^4  \notag \\
+&-\frac{1}{18144}t_7^8+e^{t_2-t_3}\left(-t_4+\frac{1}{8}t_6^2+t_5t_7-\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4 \right) \notag \\
+&+e^{t_3}\left(t_4+\frac{1}{8}t_6^2+t_5t_7+\frac{1}{2}t_6t_7^2+\frac{1}{6}t_7^4 \right) \label{eq:this7}
+\end{align}
+$q\rightarrow0$としたとき，$E_{2k}\rightarrow1$となるので，この極限で式\eqref{eq:takano5}を考えたとき，式\eqref{eq:this7}の中の$t_3, t_4$を含む項を除く部分が（添え字のずれを許容すると）一致する．これと同じ現象が，\cite{takano}の$\mu=4$と本論文の$\mu=6$，\cite{takano}の$\mu=6$と本論文の$\mu=8$についても起こる．実はこのような類似性は一般的なもので，\cite{shir}ではorbifold射影直線の次数を$0$の項と次数$1$の特別な項についての類似性が調べられている．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%加筆%考察
+
+\chapter*{結}
+\addcontentsline{toc}{chapter}{結}
+
+ここまで，有理関数$F$（\ref{eq:F}）を具体的な階数（$\mu=4,5,6,7,8$）で実際にFrobenius potentialを計算し，その計算結果から一般の階数におけるFrobenius potentialがどのような形であらわされるかを考えた．また，高野太誠\cite{takano}との比較を通してFrobeius potentialの形の類似性を見てきた．ここから，次のような疑問点がある．
+
+\begin{itemize}
+\item 今回証明できなかった，$f, g$の類似性や$q_\mu$の次数はどのようなところからあらわれているのか? $f, g$の類似性について，$e$の指数部分の$t_2, t_3$に関連していると考えている．実は条件$c_{333}$によって，$e^{t_2-t_3}f$と$e^{t_3}g$両方を得ることができるため，とくに$t_3$が重要であると考える．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item 本論文と高野\cite{takano}の結果の類似性はどこからあらわれているのか? 高野\cite[2.1.1]{takano}で定義されている有理型関数$F_T$は，階数$n$のとき，原点で$n-1$の極をもつ．一方，本論文で定義した有理関数$F$は，階数$\mu$のとき，$z=e^{s_3}$で$\mu-3$位の極をもつ．高野での階数$n$が$\mu-2$であるとき，対応があったので，$n=\mu-2$で考えると，$F_T$は原点で$\mu-3$位の極をもち，$F$での極$z=e^{s_3}$の位数と一致する．この一致が関連しているのではないかと考えている．
+\end{itemize}
+
+	今回，これらの疑問点を明らかにすることはできなかった．この疑問点の解決において，障害となったことは，一般の階数における平坦座標系を統一的な形で書き下すことができなかったことである．統一的に平坦座標系をあらわすことができれば，一般の階数において計算することができ，より$f, g, q_\mu$について深く調べることができたと考えている．ほかにも，高野\cite{takano}との比較においてはまだ調べられていないことが多くあるため，今後の課題となっている．
+
+%nodal curveであることを確かめる？%修正
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{付録 Mathematicaによる$\mu=8$の計算}
+\addcontentsline{toc}{chapter}{付録 Mathematicaによる$\mu=8$の計算}
+
+ここでは，太字が入力，細字が出力である．
+
+\section*{平坦座標（補題\ref{flat8}）}
+
+\begin{doublespace}
+\noindent\(\pmb{F=z+t[1]+E{}^{\wedge}t[2]/z+z*t[4]/(z-E{}^{\wedge}t[3])+z*E{}^{\wedge}t[3](t[5]t[8]+c[5]t[6]t[7]+c[6]t[6]t[8]{}^{\wedge}2}\\\pmb{+c[7]t[7]{}^{\wedge}2t[8]+c[8]t[7]t[8]{}^{\wedge}3+c[9]t[8]{}^{\wedge}5)/(z-E{}^{\wedge}t[3]){}^{\wedge}2+z*E{}^{\wedge}(2t[3])(t[6]t[8]{}^{\wedge}2+c[2]t[7]{}^{\wedge}2t[8]}
+\pmb{+c[3]t[7]t[8]{}^{\wedge}3+c[4]t[8]{}^{\wedge}5)/(z-E{}^{\wedge}t[3]){}^{\wedge}3+z*E{}^{\wedge}(3t[3])(t[7]t[8]{}^{\wedge}3+c[1]*t[8]{}^{\wedge}5)/(z-E{}^{\wedge}t[3]){}^{\wedge}4}\\
+\pmb{+z*E{}^{\wedge}(4t[3])t[8]{}^{\wedge}5/(z-E{}^{\wedge}t[3]){}^{\wedge}5}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{e^{t[2]}}{z}+z+t[1]+\frac{z t[4]}{-e^{t[3]}+z}+\frac{e^{4 t[3]} z t[8]^5}{\left(-e^{t[3]}+z\right)^5}+\frac{e^{3 t[3]} z \left(t[7]
+t[8]^3+c[1] t[8]^5\right)}{\left(-e^{t[3]}+z\right)^4}+\frac{e^{2 t[3]} z \left(c[2] t[7]^2 t[8]+t[6] t[8]^2+c[3] t[7] t[8]^3+c[4] t[8]^5\right)}{\left(-e^{t[3]}+z\right)^3}+\frac{e^{t[3]}
+z \left(c[5] t[6] t[7]+t[5] t[8]+c[7] t[7]^2 t[8]+c[6] t[6] t[8]^2+c[8] t[7] t[8]^3+c[9] t[8]^5\right)}{\left(-e^{t[3]}+z\right)^2}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Do}[\text{eta}[i,j]=-\text{Residue}[(D[F,t[i]]*D[F,t[j]])/(z*D[F,z])*1/z,\{z,\infty \}]}\\
+\pmb{-\text{Residue}[(D[F,t[i]]*D[F,t[j]])/(z*D[F,z])*1/z,\{z,0\}]}\\
+\pmb{-\text{Residue}[(D[F,t[i]]*D[F,t[j]])/(z*D[F,z])*1/z,\{z,E{}^{\wedge}(t[3])\}],\{i,1,8\},\{j,1,8\}];}\\
+\pmb{\text{Table}[\text{eta}[i,j],\{i,1,8\},\{j,1,8\}]}\)
+\end{doublespace}
+%修正%
+\begin{doublespace}
+\noindent\(\{\{0,1,0,0,0,0,0,0\},\{1,0,0,0,0,0,0,0\},\{0,0,0,1,0,0,0,0\},\{0,0,1,0,0,0,0,0\},\{0,0,0,0,0,0,0,1\}, \\
+\{0,0,0,0,0,0,\frac{1}{5},-\frac{t[7]-5
+c[5] t[7]+4 t[8]^2-c[1] t[8]^2-5 c[6] t[8]^2}{5 t[8]}\}, \\ 
+\{0,0,0,0,0,\frac{1}{5},-\frac{2 (2 t[7]-10 c[2] t[7]+2 t[8]^2+2 c[1] t[8]^2-5
+c[3] t[8]^2)}{25 t[8]},-\frac{1}{25 t[8]^2}(-4 t[7]^2+20 c[2] t[7]^2+5 t[6] t[8]-25 c[5] t[6] t[8]-5 t[7] t[8]^2+40 c[2] t[7] t[8]^2-10
+c[1] c[2] t[7] t[8]^2+5 c[3] t[7] t[8]^2-50 c[7] t[7] t[8]^2-16 t[8]^4+3 c[1] t[8]^4+4 c[1]^2 t[8]^4+20 c[3] t[8]^4-5 c[1] c[3] t[8]^4-10 c[4] t[8]^4-25
+c[8] t[8]^4)\}, \\ 
+\{0,0,0,0,1,-\frac{t[7]-5 c[5] t[7]+4 t[8]^2-c[1] t[8]^2-5 c[6] t[8]^2}{5 t[8]},-\frac{1}{25 t[8]^2}(-4 t[7]^2+20
+c[2] t[7]^2+5 t[6] t[8]-25 c[5] t[6] t[8]-5 t[7] t[8]^2+40 c[2] t[7] t[8]^2-10 c[1] c[2] t[7] t[8]^2+5 c[3] t[7] t[8]^2-50 c[7] t[7] t[8]^2-16 t[8]^4+3
+c[1] t[8]^4+4 c[1]^2 t[8]^4+20 c[3] t[8]^4-5 c[1] c[3] t[8]^4-10 c[4] t[8]^4-25 c[8] t[8]^4),-\frac{1}{25 t[8]^3}2 (2 t[7]^3-10 c[2] t[7]^3-5
+t[6] t[7] t[8]+25 c[5] t[6] t[7] t[8]+3 t[7]^2 t[8]^2-2 c[1] t[7]^2 t[8]^2-15 c[2] t[7]^2 t[8]^2+10 c[1] c[2] t[7]^2 t[8]^2+5 t[6] t[8]^3+5 c[1]
+t[6] t[8]^3-25 c[6] t[6] t[8]^3-12 t[7] t[8]^4-4 c[1] t[7] t[8]^4-2 c[1]^2 t[7] t[8]^4+25 c[3] t[7] t[8]^4+10 c[4] t[7] t[8]^4-50 c[8] t[7] t[8]^4+32
+t[8]^6-44 c[1] t[8]^6+c[1]^2 t[8]^6+2 c[1]^3 t[8]^6+65 c[4] t[8]^6-10 c[1] c[4] t[8]^6-100 c[9] t[8]^6)\}\}\)
+\end{doublespace}
+
+{\small
+\begin{doublespace}
+\noindent\(\pmb{\text{Solve}[\{1-5c[5]\text{==}0, 4-c[1]-5c[6]\text{==}0, 1-5c[2]\text{==}0, 2+2c[1]-5c[3]\text{==}0, } \\
+\pmb{1-8c[2]+2c[1]c[2]-c[3]+10c[7]\text{==}0,
+-16+3c[1]+4c[1]{}^{\wedge}2+20c[3]-5c[1]c[3]-10c[4]-25c[8]\text{==}0, }\\
+\pmb{3-2c[1]-15c[2]+10c[1]c[2]\text{==}0, 1+c[1]-5c[6]\text{==}0, -12-4c[1]-2c[1]{}^{\wedge}2+25c[3]+10c[4]-50c[8]\text{==}0,} \\ 
+\pmb{ 32-44c[1]+c[1]{}^{\wedge}2+2c[1]{}^{\wedge}3+65c[4]-10c[1]c[4]-100c[9]\text{==}0\},
+}\\
+\pmb{\{c[1],c[2],c[3],c[4],c[5],c[6],c[7],c[8],c[9]\}]}\)
+\end{doublespace}}
+
+\begin{doublespace}
+\noindent\(\left\{\left\{c[1]\to \frac{3}{2},c[2]\to \frac{1}{5},c[3]\to 1,c[4]\to \frac{7}{12},c[5]\to \frac{1}{5},c[6]\to \frac{1}{2},c[7]\to \frac{1}{10},c[8]\to
+\frac{1}{6},c[9]\to \frac{1}{24}\right\}\right\}\)
+\end{doublespace}
+
+{\small
+\begin{doublespace}
+\noindent\(\pmb{F'=z+t[1]+E{}^{\wedge}t[2]/z+z*t[4]/(z-E{}^{\wedge}t[3])+z*E{}^{\wedge}t[3](t[5]t[8]+1/5*t[6]t[7]+1/2*t[6]t[8]{}^{\wedge}2}\\
+\pmb{+1/10*t[7]{}^{\wedge}2t[8]+1/6*t[7]t[8]{}^{\wedge}3+1/24*t[8]{}^{\wedge}5)/(z-E{}^{\wedge}t[3]){}^{\wedge}2}\\
+\pmb{+z*E{}^{\wedge}(2t[3])(t[6]t[8]{}^{\wedge}2+1/5*t[7]{}^{\wedge}2t[8]+t[7]t[8]{}^{\wedge}3+7/12*t[8]{}^{\wedge}5)/(z-E{}^{\wedge}t[3]){}^{\wedge}3} \\
+\pmb{+z*E{}^{\wedge}(3t[3])(t[7]t[8]{}^{\wedge}3+3/2*t[8]{}^{\wedge}5)/(z-E{}^{\wedge}t[3]){}^{\wedge}4} \\
+\pmb{+z*E{}^{\wedge}(4t[3])t[8]{}^{\wedge}5/(z-E{}^{\wedge}t[3]){}^{\wedge}5}\)
+\end{doublespace}}
+
+\begin{doublespace}
+\noindent\(\frac{e^{t[2]}}{z}+z+t[1]+\frac{z t[4]}{-e^{t[3]}+z}+\frac{e^{4 t[3]} z t[8]^5}{\left(-e^{t[3]}+z\right)^5}+\frac{e^{t[3]} z \left(\frac{1}{5}
+t[6] t[7]+t[5] t[8]+\frac{1}{10} t[7]^2 t[8]+\frac{1}{2} t[6] t[8]^2+\frac{1}{6} t[7] t[8]^3+\frac{t[8]^5}{24}\right)}{\left(-e^{t[3]}+z\right)^2}+\frac{e^{2
+t[3]} z \left(\frac{1}{5} t[7]^2 t[8]+t[6] t[8]^2+t[7] t[8]^3+\frac{7 t[8]^5}{12}\right)}{\left(-e^{t[3]}+z\right)^3}+\frac{e^{3 t[3]} z \left(t[7]
+t[8]^3+\frac{3 t[8]^5}{2}\right)}{\left(-e^{t[3]}+z\right)^4}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+{\small
+\begin{doublespace}
+\noindent\(\pmb{\text{Do}[\text{eta}'[i,j]=-\text{Residue}[(D[F',t[i]]*D[F',t[j]])/(z*D[F',z])*1/z,\{z,\infty \}]} \\
+\pmb{-\text{Residue}[(D[F',t[i]]*D[F',t[j]])/(z*D[F',z])*1/z,\{z,0\}]}\\
+\pmb{-\text{Residue}[(D[F',t[i]]*D[F',t[j]])/(z*D[F',z])*1/z,\{z,E{}^{\wedge}(t[3])\}],\{i,1,8\},\{j,1,8\}];}\\
+\pmb{\text{Table}[\text{eta}'[i,j],\{i,1,8\},\{j,1,8\}]}\)
+\end{doublespace}}
+
+\begin{doublespace}
+\noindent\(\{\{0,1,0,0,0,0,0,0\},\{1,0,0,0,0,0,0,0\},\{0,0,0,1,0,0,0,0\},\{0,0,1,0,0,0,0,0\},\{0,0,0,0,0,0,0,1\}, \\ \{0,0,0,0,0,0,\frac{1}{5},0\},\{0,0,0,0,0,\frac{1}{5},0,0\},\{0,0,0,0,1,0,0,0\}\}\)
+\end{doublespace}
+
+\section*{Frobenius potential（定理\ref{pot8}）}
+
+{\small
+\begin{doublespace}
+\noindent\(\pmb{P=\frac{1}{2} t[1]^2 t[2]+t[1] t[3] t[4]+t[1] t[5] t[8]+\frac{1}{5} t[1] t[6] t[7]+}\\
+\pmb{\frac{1}{120} e^{t[2]-t[3]} \left(120 e^{t[3]}-120 t[4]+24 t[6] t[7]+120 t[5] t[8]-12 t[7]^2 t[8]-60 t[6] t[8]^2+20 t[7] t[8]^3-5 t[8]^5\right)+}\\
+\pmb{\frac{1}{120} e^{t[3]} \left(120 t[4]+12 t[6] \left(2 t[7]+5 t[8]^2\right)+t[8] \left(120 t[5]+12 t[7]^2+20 t[7] t[8]^2+5 t[8]^4\right)\right)} \\
+\pmb{+\frac{1}{2}
+t[3] t[4]^2+\frac{1}{2} \text{Log}[t[8]] t[4]^2+\frac{1}{10} t[4] t[5] \left(\frac{2 t[7]}{t[8]}+5 t[8]\right)+}\\
+\pmb{\frac{t[4] t[6]^2}{10 t[8]}+\frac{1}{10} t[4] t[6] t[7]-\frac{t[4] t[6] t[7]^2}{50 t[8]^2}+\frac{1}{24} t[4] t[6] t[8]^2+t[4] \left(\frac{t[7]^4}{1500
+t[8]^3}+\frac{1}{120} t[7]^2 t[8]\right)-\frac{t[4] t[8]^5}{2880}} \\
+\pmb{-\frac{1}{300} t[5]^2 \left(\frac{6 t[7]^2}{t[8]^2}-\frac{30 t[6]}{t[8]}+\frac{25
+t[8]^2}{2}\right)+
+\frac{t[5] t[6] t[7]^3}{125 t[8]^3}-\frac{t[5] t[6]^2 t[7]}{25 t[8]^2}} \\
+\pmb{-\frac{1}{60} t[5] t[6] t[7] t[8]+t[5] \left(-\frac{t[7]^5}{3125 t[8]^4}+\frac{1}{720}
+t[7] t[8]^4\right)+\frac{\frac{4}{3} t[6]^3 t[7]^2-\frac{5}{4} t[6]^4 t[8]}{250 t[8]^3}+-\frac{1}{600} t[6]^2 t[7]^2-\frac{3 t[6]^2 t[7]^4}{2500
+t[8]^4}-}\\
+\pmb{\frac{1}{960} t[6]^2 t[8]^4+t[6] \left(\frac{3 t[7]^6}{31250 t[8]^5}-\frac{t[7]^2 t[8]^3}{7200}\right)+\frac{t[6] t[8]^7}{12096}-\frac{t[7]^8}{375000
+t[8]^6}-\frac{t[7]^4 t[8]^2}{24000}-\frac{t[7]^2 t[8]^6}{25920}-\frac{t[8]^{10}}{276480}}\\
+\pmb{\text{fnc}[\text{i$\_$},\text{j$\_$},\text{k$\_$}]\text{:=}-\text{Residue}[(D[F',t[i]]*D[F',t[j]]*D[F',t[k]])/(z*D[F',z])*1/z,\{z,\infty \}]} \\
+\pmb{-\text{Residue}[(D[F',t[i]]*D[F',t[j]]*D[F',t[k]])/(z*D[F',z])*1/z,\{z,0\}]-}\\
+\pmb{\text{Residue}[(D[F',t[i]]*D[F',t[j]]*D[F',t[k]])/(z*D[F',z])*1/z,\{z,E{}^{\wedge}t[3]\}]-D[P,t[k],t[j],t[i]]}\\
+\pmb{\text{int}[\text{i$\_$},\text{j$\_$},\text{k$\_$}]\text{:=}\text{Integrate}[\text{Integrate}[\text{Integrate}[\text{fnc}[i,j,k],t[i]],t[j]],t[k]]}\)
+\end{doublespace}}
+
+\begin{doublespace}
+\noindent\(\frac{1}{2} t[1]^2 t[2]+t[1] t[3] t[4]+\frac{1}{2} \text{Log}[t[8]] t[4]^2+\frac{1}{2} t[3] t[4]^2+\frac{1}{5} t[1] t[6] t[7]+\frac{1}{10}
+t[4] t[6] t[7]-\frac{1}{600} t[6]^2 t[7]^2-\frac{t[7]^8}{375000 t[8]^6}-\frac{3 t[6]^2 t[7]^4}{2500 t[8]^4}+\frac{t[5] t[6] t[7]^3}{125 t[8]^3}-\frac{t[5]
+t[6]^2 t[7]}{25 t[8]^2}-\frac{t[4] t[6] t[7]^2}{50 t[8]^2}+\frac{t[4] t[6]^2}{10 t[8]}+t[1] t[5] t[8]-\frac{1}{60} t[5] t[6] t[7] t[8]+\frac{1}{24}
+t[4] t[6] t[8]^2-\frac{t[7]^4 t[8]^2}{24000}-\frac{1}{960} t[6]^2 t[8]^4-\frac{t[4] t[8]^5}{2880}-\frac{t[7]^2 t[8]^6}{25920}+\frac{t[6] t[8]^7}{12096}-\frac{t[8]^{10}}{276480}+\frac{1}{10}
+t[4] t[5] \left(\frac{2 t[7]}{t[8]}+5 t[8]\right)+\frac{\frac{4}{3} t[6]^3 t[7]^2-\frac{5}{4} t[6]^4 t[8]}{250 t[8]^3}+t[4] \left(\frac{t[7]^4}{1500
+t[8]^3}+\frac{1}{120} t[7]^2 t[8]\right)-\frac{1}{300} t[5]^2 \left(\frac{6 t[7]^2}{t[8]^2}-\frac{30 t[6]}{t[8]}+\frac{25 t[8]^2}{2}\right) \\ +t[6]
+\left(\frac{3 t[7]^6}{31250 t[8]^5}-\frac{t[7]^2 t[8]^3}{7200}\right)+t[5] \left(-\frac{t[7]^5}{3125 t[8]^4}+\frac{1}{720} t[7] t[8]^4\right) \\ +\frac{1}{120}
+e^{t[2]-t[3]} \left(120 e^{t[3]}-120 t[4]+24 t[6] t[7]+120 t[5] t[8]-12 t[7]^2 t[8]-60 t[6] t[8]^2+20 t[7] t[8]^3-5 t[8]^5\right) \\ +\frac{1}{120} e^{t[3]}
+\left(120 t[4]+12 t[6] \left(2 t[7]+5 t[8]^2\right)+t[8] \left(120 t[5]+12 t[7]^2+20 t[7] t[8]^2+5 t[8]^4\right)\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{Do}[\text{int}[i,j,k],\{i,1,8\},\{j,1,8\},\{k,1,8\}];\text{Table}[\text{int}[i,j,k],\{i,1,8\},\{j,1,8\},\{k,1,8\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\ 
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}\}\)
+\end{doublespace}
+
+\section*{WDVV方程式をみたすことの確認}
+
+WDVV方程式
+\begin{equation*}
+\displaystyle \sum_{a ,b=1}^{\mu}\p_{i}\p_{j}\p_{a}\F \cdot \eta^{a b}\cdot \p_{b}\p_{k}\p_{\ell}\F
+=\sum_{a ,b=1}^{\mu}\p_{i}\p_{k}\p_{a}\F \cdot \eta^{a b}\cdot \p_{b}\p_{j}\p_{\ell}\F
+\end{equation*}
+を移項して
+\begin{equation*}
+\displaystyle \sum_{a ,b=1}^{\mu}\p_{i}\p_{j}\p_{a}\F \cdot \eta^{a b}\cdot \p_{b}\p_{k}\p_{\ell}\F
+-\sum_{a ,b=1}^{\mu}\p_{i}\p_{k}\p_{a}\F \cdot \eta^{a b}\cdot \p_{b}\p_{j}\p_{\ell}\F =0
+\end{equation*}
+と変形したものを考える．任意の$i, j, k, \ell$について$0$になることを確かめればよい．$\mu=8$のとき，$(\eta_{ij})$の逆行列$(\eta^{ij})$は次のようなものである：
+\begin{align*}
+(\eta^{ij}) = 
+\begin{pmatrix}
+	0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+	0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 0 & 0 & 0 & 5 & 0 \\
+	0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 \\
+	0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+\end{pmatrix}.
+\end{align*}
+以上を用いると，次のように計算できる．
+
+{\small
+\begin{doublespace}
+\noindent\(\pmb{\text{Do}[\text{wdvv}[i,j,k,l]=D[D[D[P,t[1]],t[j]],t[i]]D[D[D[P,t[l]],t[k]],t[2]]+D[D[D[P,t[2]],t[j]],t[i]]D[D[D[P,t[l]],t[k]],t[1]]}\\
+\pmb{+D[D[D[P,t[3]],t[j]],t[i]]D[D[D[P,t[l]],t[k]],t[4]]+D[D[D[P,t[4]],t[j]],t[i]]D[D[D[P,t[l]],t[k]],t[3]]}\\
+\pmb{+D[D[D[P,t[5]],t[j]],t[i]]D[D[D[P,t[l]],t[k]],t[8]]+D[D[D[P,t[8]],t[j]],t[i]]D[D[D[P,t[l]],t[k]],t[5]]}\\
+\pmb{+D[D[D[P,t[6]],t[j]],t[i]]*5*D[D[D[P,t[l]],t[k]],t[7]]+D[D[D[P,t[7]],t[j]],t[i]]*5*D[D[D[P,t[l]],t[k]],t[6]]}
+\pmb{-D[D[D[P,t[1]],t[k]],t[i]]D[D[D[P,t[l]],t[j]],t[2]]-D[D[D[P,t[2]],t[k]],t[i]]D[D[D[P,t[l]],t[j]],t[1]]}\\
+\pmb{-D[D[D[P,t[3]],t[k]],t[i]]D[D[D[P,t[l]],t[j]],t[4]]-D[D[D[P,t[4]],t[k]],t[i]]D[D[D[P,t[l]],t[j]],t[3]]}\\
+\pmb{-D[D[D[P,t[5]],t[k]],t[i]]D[D[D[P,t[l]],t[j]],t[8]]-D[D[D[P,t[8]],t[k]],t[i]]D[D[D[P,t[l]],t[j]],t[5]]} \\
+\pmb{-D[D[D[P,t[6]],t[k]],t[i]]*5*D[D[D[P,t[l]],t[j]],t[7]]-D[D[D[P,t[7]],t[k]],t[i]]*5*D[D[D[P,t[l]],t[j]],t[6]],} 
+\pmb{\{i,1,8\},\{j,1,8\},\{k,1,8\},\{l,1,8\}];}\\
+\pmb{\text{Table}[\text{wdvv}[i,j,k,l],\{i,1,8\},\{j,1,8\},\{k,1,8\},\{l,1,8\}]}\)
+\end{doublespace}}
+
+\begin{doublespace}
+\noindent\(\{\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\}, \{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}\}, \\
+\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}\}, \\
+\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\}\},\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\}\},\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}\}, \\
+\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}\},\{\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}\},\{\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\}, \\
+\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}\},\{\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\}, \\
+\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\{0,0,0,0,0,0,0,0\},\\
+\{0,0,0,0,0,0,0,0\}\}\}\}\)
+\end{doublespace}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}
+{\small
+
+
+
+\bibitem{d:4}
+B. Dubrovin,
+{\it Geometry and analytic theory of Frobenius manifolds},
+In Proceedings of the International Congress of Mathematicians, Vol. II (Berlin, 1998), number Extra Vol. II, pages 315-326 (electronic), 1998.
+
+\bibitem{d:1}
+B.~Dubrovin,
+{\it Geometry of 2d topological field theories},
+Integrable systems and quantum groups
+(Montecatini Terme, 1993), Lecture Notes in Math., vol. 1620, Springer, Berlin, 1996, pp. 120--348.
+
+\bibitem{d:2}
+B.~Dubrvoin,
+{\it On almost duality for Frobenius manifolds},
+Geometry, topology, and mathematical physics 75–132. Amer. Math. Soc. Transl. Ser. 212, Adv. Math. Sci. 55 Amer. Math. Soc., Providence, RI
+
+\bibitem{d:3}
+B.~Dubrovin,
+{\it Painlevé transcendents in two-dimensional topological field theory},
+The Painlevé property, 287–412, CRM Ser. Math. Phys., Springer, New York, 1999.
+
+\bibitem{dz:1}
+B.~Dubrovin and Y.~Zhang,
+{\it Extended Affine Weyl Groups and Frobenius Manifolds},
+Compositio Math. 111 (1998) 167--219.
+
+\bibitem{her:1}
+C.~Hertling,
+{\it Frobenius manifolds and moduli spaces for singularities},
+Cambridge Tracts in Mathematics, Cambridge University Press, Spring 2002.
+
+\bibitem{iost:1}
+A.~Ikeda, T.~Otani, Y.~Shiraishi and A.~Takahashi,
+{\it A Frobenius manifold for $\ell$--Kronecker quiver},
+Lett. Math. Phys. 112, no. 1, Paper No. 14, 2022.
+
+\bibitem{ist}
+Y.~Ishibashi, Y.~Shiraishi and A.~Takahashi,
+{\it A uniqueness theorem for Frobenius manifolds and Gromov-Witten theory for orbifold projective lines},
+Journal für die reine und angewandte Mathematik (Crelles Journal), vol. 2015, no 702, 2015, pp. 143-171.
+
+\bibitem{ma:1}
+Y.~Manin,
+{\it Frobenius manifolds, Quantum Cohomology, and Moduli Spaces},
+American Mathematical Soc., 1999 - 303.
+
+\bibitem{mil}
+T.~Milanov,
+{\it Primitive forms and Frobenius structures on the Hurwitz spaces},
+arXiv:1701.00393.
+
+\bibitem{sa:1}
+K.~Saito,
+{\it Primitive forms for a universal unfolding of a function with an isolated critical point}.
+J. Fac. Sci. Univ. Tokyo Sect. IA Math. {\bf 28} (1982), no. 3, 775--792.
+
+\bibitem{S1202-Saito}
+K. Saito,
+\textit{Period mapping associated to a primitive form},
+Publ. RIMS, Kyoto Univ. {\bf 19} (1983) 1231--1264.
+
+\bibitem{st:1}
+K.~Saito and A.~Takahashi,
+{\it From Primitive Forms to Frobenius manifolds},
+Proceedings of Symnposia in Pure Mathematics, {\bf 78} (2008) 31--48.
+
+\bibitem{sat}
+I.~Satake,
+{\it Frobenius manifolds for elliptic root systems},
+Osaka J. Math. {\bf 47} (2010) 301–330.
+
+\bibitem{shir}
+Y.~Shiraishi,
+{\it On Frobenius manifolds from Gromov-Witten theory of orbifold projective lines with $r$ orbifold points},
+Tohoku Math. J. (2) 70(1):17-37 (2018).
+
+\bibitem{tak:1}
+A.~Takahashi,
+{\it Primitive Forms, Topological LG models coupled to Gravity and Mirror Symmetry},
+arXiv, https://arxiv.org/abs/math/9802059.
+
+\bibitem{mz}
+S.~Ma, D.~Zuo,
+{\it Frobenius Manifolds and a New Class of Ectended Affine Weyl Groups of A-type (II)},
+Commun. Math. Stat. 12, 617-632 (2024).
+
+\bibitem{tak:2}
+高橋　篤史,
+原始形式・ミラー対称性入門，
+岩波書店（2021）
+
+\bibitem{takano}
+高野 太誠．
+楕円関数の変形理論と原始形式から得られるFrobenius potential, 修士論文.
+
+}
+\end{thebibliography}
+
+\end{document}
+
+
+

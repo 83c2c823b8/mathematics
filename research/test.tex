@@ -1,0 +1,58 @@
+\documentclass[11pt]{ltjsarticle} % LuaLaTeX + 日本語対応文書クラス
+
+% ページ余白設定
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+
+% 日本語対応
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+
+
+% 数式・定理環境
+\usepackage{amsmath, amssymb, amsthm}
+
+% 定理環境の定義
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{定義}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{注意}
+\newtheorem{ex}[thm]{例}
+
+% 見出しの設定（任意）
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+% ハイパーリンク
+\usepackage[dvipdfmx]{hyperref}
+
+% タイトルなど
+\title{サンプル文書}
+\author{鳩山 雄大}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{はじめに}
+
+これは LuaLaTeX を用いた日本語文書のサンプルです。
+
+\begin{dfn}
+自然数とは、$1, 2, 3, \ldots$ のような数のことである。
+\end{dfn}
+
+\begin{thm}[ピタゴラスの定理]
+直角三角形の斜辺の長さの二乗は、他の二辺の長さの二乗の和に等しい。
+\end{thm}
+
+\begin{proof}
+証明は省略する。
+\end{proof}
+
+\end{document}
+

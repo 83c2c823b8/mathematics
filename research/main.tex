@@ -1,0 +1,29 @@
+\RequirePackage{luatex85}
+\documentclass[leqno]{ltjsarticle}
+\usepackage{luatexja-fontspec}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{luatexja} 
+\usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,test,tikz-cd,enumitem}
+\usetikzlibrary{arrows.meta,calc}
+\titleformat*{\section}{\Large\bfseries}
+\setlength{\parindent}{0pt}
+\usepackage[most]{tcolorbox}
+\tikzset{every picture/.style={remember picture,baseline=(current bounding box.center)}}
+%\everymath{\displaystyle}
+\begin{document}
+\title{安定性条件}
+\date{}
+\author{大阪大学大学院理学研究科数学専攻\\山本　雄大}
+\maketitle
+\tableofcontents
+\input{Axiom_of_triangulated_category}
+\input{t_structure}
+\input{stability_conditions}
+\input{space_of_stability_conditions}
+\begin{thebibliography}{B9}
+	\bibitem[B1]{BridgelandStab}
+	Bridgeland, Tom,
+		\textit{Stability conditions on triangulated categories},
+	Annals of Mathematics, Vol. 166, No. 2, 2007, pp. 317–345.
+\end{thebibliography}
+\end{document}
