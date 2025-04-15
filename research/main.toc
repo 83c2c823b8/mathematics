@@ -1,4 +1,4 @@
 \contentsline {section}{\numberline {1}三角圏の公理}{1}{}%
-\contentsline {section}{\numberline {2}t-structure}{3}{}%
-\contentsline {section}{\numberline {3}安定性条件}{4}{}%
-\contentsline {section}{\numberline {4}安定性条件の空間}{8}{}%
+\contentsline {section}{\numberline {2}t-structure}{4}{}%
+\contentsline {section}{\numberline {3}安定性条件}{6}{}%
+\contentsline {section}{\numberline {4}安定性条件の空間}{10}{}%

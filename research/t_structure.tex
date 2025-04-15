@@ -18,7 +18,7 @@
 \begin{lemm}
 		\begin{itemize}
 				\item[(i)]$\D^{\ge 1}=(\D^{\le 0})^{\perp}$
-				\item[(ii)]$E$に対して，$\tau_{\le 0}E, \tau_{\ge 1}E$は同型を除いて一意に定まる．
+				\item[(ii)]$E\in\D$に対して，$\tau_{\le 0}E\in\D^{\le 0}, \tau_{\ge 1}E\in\D^{\ge 1}$は同型を除いて一意に定まる．
 		\end{itemize}
 \end{lemm}
 	\begin{proof}
@@ -29,7 +29,7 @@
 				\[F\rightarrow E \rightarrow G\rightarrow F[1]\]
 \end{proof}
 \begin{defn}\cite{BBD}
-	$(D^{\le 0},\D^{\ge 0})$がt-構造のを与えるとき，$\D$の部分圏$\H\coloneq\D^{\le 0}\cap\D^{\ge 0}$はt-構造の核(the heart of t-structure)と呼ばれる．
+	$(D^{\le 0},\D^{\ge 0})$がt-構造を与えるとき，$\D$の部分圏$\H\coloneq\D^{\le 0}\cap\D^{\ge 0}$はt-構造の核(the heart of t-structure)と呼ばれる．
 \end{defn}
 
 \begin{lemm}\cite{BBD}
@@ -37,12 +37,41 @@
 \end{lemm}
 \begin{proof}
 	$E,F\in\H$，$f\in\Hom_{\H}(E,F)$を任意にとる．このとき，三角圏の公理より以下の完全三角形
-	\[G\xrightarrow{e}E\xrightarrow{f}F\xrightarrow{g}G[1]\]
+	\[C\xrightarrow{e}A\xrightarrow{f}B\xrightarrow{g}C[1]\]
 	が存在する．t-構造の定義より
-	\[X\xrightarrow{x}G[1]\xrightarrow{y}Y\rightarrow X[1]\]
-	が完全三角形となるような$X\in \D^{\le 0},Y\in \D^{\ge 1}$が存在する．このとき，
+	\[X\xrightarrow{x}C[1]\xrightarrow{y}Y\rightarrow X[1]\]
+	が完全三角形となるような$X\in \D^{\le -1},Y\in \D^{\ge 0}$が存在する．このとき，
 	\[y\circ g\colon B\rightarrow Y\]
 	が$f$の余核を与えることを示す．
+	\begin{comment}
+			\[
+				\begin{tikzcd}[column sep=huge,row sep =huge]
+					B[-1] \ar[r,"g\texttt{[-1]}"]\ar[d,equal]& C\ar[r,]\ar[d,"y\texttt{[-1]}",swap]& A\ar[d,"\ell",dotted] \ar[r,"f"]& B\ar[d,equal]\\
+					B[-1] \ar[r,"y\texttt{[-1]}\circ g\texttt{[-1]}"]\ar[d,"g\texttt{[-1]}",swap]& Y[-1]\ar[r,]\ar[d,equal]& M\ar[d,dotted] \ar[r,"m"]& B\ar[d,"g"]\\
+					C \ar[r,]\ar[d,swap]& Y[-1]\ar[r,]\ar[d,swap]& X \ar[r,"x"]\ar[d,equal]& C[1] \ar[d,]\\
+			A \ar[r,"\ell",dotted]& M\ar[r,dotted]&  X\ar[r,dotted]& A[1]\\
+		\end{tikzcd}
+			\]
+\end{comment}	
+			定義より，$A\in\H\subset\D^{\le 0}$，$X\in\D^{\le -1}\subset\D^{\le 0}$であり，八面体公理より存在する以下の完全三角形から
+	\[A\rightarrow M\rightarrow X\rightarrow A[1]\]
+	$M\in\D^{\le 0}$がわかる．$B\in\H\subset\D^{\le 0}$，$A[1]\in \D^{\le -1}\subset \D^{\le 0}$より$C[1]\in\D^{\le 0}$がしたがう．$X[1]\in\D^{\le -2}\subset\D^{\le 0}$と合わせて，$Y\in\D^{\le 0}$がしたがう．取り方により$Y\in\D^{\ge 0}$だったので$Y\in\H$がわかる．\\
+	$Q\in\H$と$q\circ f$を満たす$q\in\Hom_{\H}(B,Q)$を任意にとると，$q=q'\circ g$を満たす$q'\in\Hom_{\D}(C[1],Q)$が存在する．また，$X\in\D^{\le -1}$，$Q\in\D^{\ge 0}$なので$g\circ q'=0$．したがって，$q'=y\circ q''$を満たす$q''\in\Hom_{\D}(Y,Q)$が存在する．完全系列
+	\[A\rightarrow B\xrightarrow{g} C[1]\rightarrow A[1]\]
+	に対して，コホモロジー的函手$\Hom_{\D}(-,Q)$を作用させると$A[1]\in\D^{\le -1}$なので$\Hom_{\D}(A[1],Q)=0$から完全列
+	\[0\rightarrow \Hom_{\D}(C[1],Q) \rightarrow \Hom_{\D}(B,Q)\]
+	が存在して，$q=q'\circ g$となる$q'$の一意性がわかる．どうように$X[1]\in\D^{\le -1}$なので，
+	\[0\rightarrow \Hom_{\D}(Y[1],Q) \rightarrow \Hom_{\D}(C[1],Q)\]
+	$q'=q''\circ y$となる$q''$の一意性がわかる．したがって，$y\circ g\colon B\to Y$が$f\colon Ato B$の余核を与えていることが示された．反対圏を考えることで核の存在も証明される．
+\end{proof}
+
+\begin{thm}
+	$\H$はアーベル圏となる．
+\end{thm}
+\begin{proof}
+	核，余核の存在は示されたので任意の射$f\in\Hom_{\H}(A,B)$にたいして，
+\[\Im(f)\simeq \Coim(f)\]
+の存在を言えばよい．
 \end{proof}
 
 \begin{lemm}

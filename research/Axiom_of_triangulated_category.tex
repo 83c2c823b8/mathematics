@@ -4,7 +4,7 @@
 	\vspace{-3mm}
 	\begin{itemize}
 		\item[(i)]
-			任意の$E,F\in\C$に対して，$\Hom_{\C}(E,F)$がAbel群になる．
+			任意の$E,F\in\C$に対して，$\Hom_{\C}(E,F)$がアーベル群になる．
 		\item[(ii)]
 			任意の$E,F,G\in\C$に対して，
 		\[
@@ -104,13 +104,18 @@
 	\end{itemize}
 \end{defn}
 
+\begin{lemm}
+	三角圏$\D$において，任意の射$f\colon E\rightarrow F$
+	\[E\xrightarrow{f} F\xrightarrow{g} G\rightarrow E[1]\]
+\end{lemm}
+
 \begin{defn}
 	$\D$を三角圏，$\C$をその充満部分加法圏としたとき以下の用語を定義する．
 	\begin{itemize}
 		\item[(i)]
 			$\C$の$\D$における右（左）直交部分圏(right (left) orthogonal subcategory)$\C^\perp,{}^\perp\C$を$\D$の充満部分圏として
-			\[\C^\perp\coloneq \{E\in\D\mid\forall F\in\C,\ \Hom_{\D}(E,F)=0\}\]
-			\[{}^\perp\C\coloneq \{F\in\D\mid\forall E\in\C,\ \Hom_{\D}(E,F)=0\}\]
+			\[\C^\perp\coloneq \{F\in\D\mid\forall E\in\C,\ \Hom_{\D}(E,F)=0\}\]
+			\[{}^\perp\C\coloneq \{E\in\D\mid\forall F\in\C,\ \Hom_{\D}(E,F)=0\}\]
 		\item[(ii)]
 			$\C$が$\D$の狭義充満部分圏(strictly full subcategory)であるとは以下を満たすときである．\\
 			$E\in\C$かつ$F\in\D$に対して$E\simeq F$ならば$F\in\C$
@@ -120,14 +125,57 @@
 			$\C$がthick部分圏(thick subcategory)であるとは，$\C = \thick\C$が成り立つときをいう．
 	\end{itemize}
 \end{defn}
+$E^\bullet\in\D^b(\A)$に対して，$\tau_{\le i},\ \tau_{> i},\sigma_{\le i}, \sigma_{> i}$を
+\begin{gather*}
+	\tau_{\le i}E^\bullet\coloneq (\cdots \rightarrow E^{i-2}\rightarrow E^{i-1}\rightarrow \Ker d_E^i\rightarrow 0\rightarrow \cdots)\\
+	\tau_{> i}E^\bullet\coloneq (\cdots \rightarrow 0\rightarrow \Im d_E^i\rightarrow E^{i+1}\rightarrow E^{i+2}\rightarrow \cdots)\\
+	\sigma_{\le i}E^\bullet\coloneq (\cdots \rightarrow E^{i-2}\rightarrow E^{i-1}\rightarrow E^i\rightarrow 0\rightarrow \cdots)\\
+	\sigma_{> i}E^\bullet\coloneq (\cdots \rightarrow 0\rightarrow E^{i+1}\rightarrow E^{i+2}\rightarrow E^{i+3}\rightarrow \cdots)
+\end{gather*}
+と定めると
+\begin{gather}
+	\tau_{\le i}E^\bullet\rightarrow E^\bullet \rightarrow\tau_{>i}E^\bullet\rightarrow \tau_{\le i}E^\bullet[1]\label{canonical}\\
+	\sigma_{>i}E^\bullet\rightarrow E^\bullet \rightarrow\sigma_{\le i}E^\bullet\rightarrow \sigma_{> i}E^\bullet[1]\label{stupid}
+\end{gather}
+が完全三角形となる．
 
 \begin{defn}
-	アーベル圏$\A$と三角圏$\D$に対して，グロタンディーク群$K(\A)$と$K(\D)$をそれぞれ対象たちで自由生成された群を以下の群で割ったものであると定める．
-	\[<[F]-[E]-[G]\mid 短完全列\ 0\rightarrow E\rightarrow F\rightarrow G\rightarrow 0\ が\A で存在する．>\]
-	\[<[F]-[E]-[G]\mid 完全三角形\  E\rightarrow F\rightarrow G\rightarrow E[1]\ \D で存在する．>\]
+	アーベル圏$\A$と三角圏$\D$に対して，Grothendieck群$K(\A)$と$K(\D)$をそれぞれ対象たちで自由生成された群を以下の群で割ったものであると定める．
+	\[\langle[F]-[E]-[G]\mid 短完全列\ 0\rightarrow E\rightarrow F\rightarrow G\rightarrow 0\ が\A で存在する．\rangle\]
+	\[\langle [F]-[E]-[G]\mid 完全三角形\  E\rightarrow F\rightarrow G\rightarrow E[1]\ が\D で存在する．\rangle\]
+
 \begin{lemm}
-	$E\in\A$を$(\cdots\rightarrow 0\rightarrow E\rightarrow 0\rightarrow\cdots)\in\D^{b}(\A)$と$0$次にのみ$E$があるとする対応
+	$E^\bullet\in D^b(\A)$に対し，Grothendieck群$K(D^b(\A))$の中で
+	\[[E^\bullet] = \sum_i(-1)^i[\H^i(E^\bullet)] = \sum_{i}(-1)^i[E^i]\]
+\end{lemm}
+\begin{proof}
+	完全三角形(\ref{stupid})により，
+	\[[E^\bullet] = [\sigma_{>i}E^\bullet] + [\sigma_{\le i}E^\bullet]\]
+	が成り立つ．$E^\bullet$は有界複体なので，繰り返し適用すれば
+	\[[E^\bullet] = \sum_{i\in\ZZ}[E^i[-i]]\]
+	完全三角形$E\rightarrow 0\rightarrow E[1]\rightarrow E[1]$を考えれば，$[E] = -E[1]$より$[E^\bullet] = \sum_{i\in\ZZ}(-1)^i[E^i]$\\
+同様に完全三角形(\ref{canonical})により，
+	\[[E^\bullet] = [\tau_{\le i}E^\bullet] + [\tau_{> i}E^\bullet]\]
+繰り返し用いて，
+\begin{align*}
+	[E^\bullet] &= \sum_{i\in\ZZ}([\Im d_E^i[-i]] + [\Ker d_E^i[-i]])\\
+							&= \sum_{i\in\ZZ}((-1)^i(-[\Im d_E^{i-1}] + [\Ker d_E^i])
+							\intertext{$0\rightarrow\Im_{E}^{i-1}\rightarrow \Ker d_E^{i} \rightarrow \H^i(E)\rightarrow 0$の短完全列より}
+							&= \sum_{i\in\ZZ}(-1)^i[\H^i(E^\bullet)]
+\end{align*}
+\end{proof}
+
+\begin{lemm}
+	$E\in\A$を$(\cdots\rightarrow 0\rightarrow E\rightarrow 0\rightarrow\cdots)\in\D^{b}(\A)$と$0$次にのみ$E$があるとする対応が誘導する写像
 	\[K(\A)\rightarrow K(\D^b(\A))\]
 	で群の同型が与えられる．
 \end{lemm}
+\begin{proof}
+	$\A$での短完全列は$\D^b(\A)$での完全三角形を対応させるのでwell-definedである．\\
+	\begin{gather*}
+		\phi([E])\coloneq [(\cdots\rightarrow 0\rightarrow E\rightarrow 0\rightarrow \cdots)]\\
+		\psi([E^\bullet])\coloneq \sum_i(-1)^i[\H^i(E^\bullet)]
+	\end{gather*}
+	と定めると互いに逆を与えている．
+\end{proof}
 \end{defn}

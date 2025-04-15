@@ -1,7 +1,7 @@
 \section{安定性条件}
 	
 
-\begin{defn}\cite{BridgelandStab}
+\begin{defn}\cite{Bristab}
 		アーベル圏$\A$上の安定性条件とは群準同型
 		\[Z\colon K(\A)\to \CC\]
 		で以下を満たすもの
@@ -29,7 +29,7 @@ $E(\neq 0)$が$Z$-半安定とは任意の部分対象$0\neq F\subsetneq E$に�
 	の完全列が存在して$E$が半安定対象であることから$\phi(\Im f)\ge\phi(E)$．$\Im f\neq 0$が$F$の部分対象で$F$も半安定であることから$\phi(F)\ge\phi(\Im f)$．これらを合わせると$\phi(F)\ge\phi(E)$．仮定に矛盾．
 \end{pf}
 
-\begin{lemm}\cite{BridgelandStab}
+\begin{lemm}\cite{Bristab}
 		$\A\colon$アーベル圏，群準同型$Z\colon K(\A)\to \CC$が次の条件を満たすとき，HNフィルトレーションが存在する．つまり$Z$が安定性条件を定める．
 		\begin{itemize}
 			\item[(i)]
@@ -43,7 +43,7 @@ $E(\neq 0)$が$Z$-半安定とは任意の部分対象$0\neq F\subsetneq E$に�
 	\end{itemize}
 \end{lemm}
 
-\begin{pf}\hfil
+\begin{proof}\hfil
 	\begin{screen}
 	Step 1\hspace{5mm}\\
 	\bullet 任意の対象$E\in\A$には$\phi(A) \ge \phi(E)$を満たす半安定な部分対象$A$が存在する．\\
@@ -180,7 +180,7 @@ $E'$がmdqでない場合は$E$を$E'$に取り替えて議論を繰り返すこ
 	\end{tikzpicture}
 \end{center}
 から$\phi(B^2)\ge\phi(Q)$が得られる．$\phi(B^2)=\phi(Q)=\phi(B^1)$と仮定すると，$E\twoheadrightarrow B^1$がmdqであることから$E\twoheadrightarrow B^1\twoheadrightarrow Q$となって，$B^1$と$Q$の双方向に全射があることから$B^1\simeq Q$となり，$B^2=0$．これは矛盾．したがって，$\phi(B^2)>\phi(B^1)$が成り立つ．この操作は条件(ii)より有限回でとまり，その商は半安定なのでHNフィルトレーションを得る．
-\end{pf}
+\end{proof}
 
 \begin{defn}
 	$\D\colon$三角圏．$\D$上の安定性条件とは，$\D$の有界な$t$-構造のHeart $\A\subset\D$と$\A$と$\A$上の安定性条件
