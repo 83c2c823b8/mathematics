@@ -34,6 +34,21 @@
 \end{defn}
 
 \begin{defn}
+	$\C$を加法圏とする．このとき，$f\in\Hom_{\C}(E,F)$の核(kernel)とは$\Ker f\in\C$と$\ker f\in\Hom_{\C}(\Ker f,E)$の組$(\Ker f,\ker f)$であって，以下の普遍性をみたすものである．
+	\[\begin{tikzcd}
+		K\ar[rd,"k"]\ar[d,"\exists !h",dotted,swap]\\
+		\Ker f\ar[r,"\ker f",swap]&E\ar[r,"f",swap]&F
+\end{tikzcd}\]
+\begin{itemize}
+	\item[(i)]
+		$f\circ\ker f=0$
+	\item[(ii)]
+		任意の$K\in\C$と$k\in\Hom_{\C}(K,E)$で$f\circ k=0$を満たすものに対して，一意に$h\in\Hom_{\C}(K,\Ker f)$が存在して，$\ker f\circ h=k$となる．\\
+$f\in\Hom_{\C}(E,F)$の$\C$での反対圏での核を余核(cokernel)とよび，$(\Cok f,\cok f)$と記す．
+\end{itemize}
+\end{defn}
+
+\begin{defn}
 	加法圏$\A$がアーベル圏(Abelian category)であるとは以下を満たす場合である．
 	\vspace{-3mm}
 	\begin{itemize}
